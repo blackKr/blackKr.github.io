@@ -105,11 +105,16 @@
 <h3 id="设置忽略文件"><a href="#设置忽略文件" class="headerlink" title="设置忽略文件"></a>设置忽略文件</h3><p>export SVN_EDITOR=vim<br>svn propedit svn:ignore 需要设置忽略的文件/文件夹   此时在vim中 输入需要忽略的文件夹名称即可</p>
 <h3 id="查看最近几条日志"><a href="#查看最近几条日志" class="headerlink" title="查看最近几条日志"></a>查看最近几条日志</h3><p>svn log -l 10     (查看最近10条日志 l 是小写的 L)</p>
 ]]></content>
+      <tags>
+        <tag>svn</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hexo 操作指南</title>
-    <url>/2020/01/27/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
+    <url>/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>

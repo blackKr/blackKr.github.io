@@ -19,10 +19,11 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:author" content="Black">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="javascript">
 <meta property="article:tag" content="cygwin">
 <meta property="article:tag" content="shell">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="svn">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -70,7 +71,7 @@
     <link rel="stylesheet" href="/css/progressbar.css">
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
     
-    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
 
@@ -92,19 +93,19 @@
             <div class="navbar-start">
                 
                 <a class="navbar-item"
-                href="/">Home</a>
+                href="/">首页</a>
                 
                 <a class="navbar-item"
-                href="/archives">Archives</a>
+                href="/archives">归类</a>
                 
                 <a class="navbar-item"
-                href="/categories">Categories</a>
+                href="/categories">分类</a>
                 
                 <a class="navbar-item is-active"
-                href="/tags">Tags</a>
+                href="/tags">标签</a>
                 
                 <a class="navbar-item"
-                href="/about">About</a>
+                href="/about">关于</a>
                 
             </div>
             
@@ -168,6 +169,13 @@
                     </a>
                 </div>
                 
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/svn/">
+                        <span class="tag">svn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -187,22 +195,24 @@
                 <div>
                     
                     <figure class="image is-128x128 has-mb-6">
-                        <img class="" src="/images/avatar.png" alt="Your name">
+                        <!--<img class="" src="/images/kb-mini.png" alt="小黑搞点事">-->
+                        <!--不管了 都用圆角-->
+                        <img class="is-rounded" src="/images/kb-mini.png" alt="小黑搞点事">
                     </figure>
                     
                     <p class="is-size-4 is-block">
-                        Your name
+                        小黑搞点事
                     </p>
                     
                     
                     <p class="is-size-6 is-block">
-                        Your title
+                        前端渣渣
                     </p>
                     
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Your location</span>
+                        <span>天府-成都</span>
                     </p>
                     
                 </div>
@@ -240,7 +250,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            4
+                            5
                         </p>
                     </a>
                 </div>
@@ -295,6 +305,7 @@
         
     </div>
 </div>
+
     
         
     
@@ -353,7 +364,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/cygwin/" style="font-size: 10px;">cygwin</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
+        <a href="/tags/cygwin/" style="font-size: 10px;">cygwin</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a>
     </div>
 </div>
     
@@ -370,7 +381,7 @@
             
             <a href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="命令工具">
+                    <img class="thumbnail" src="/images/shell.png" alt="命令工具">
                 </p>
             </a>
             
@@ -389,7 +400,7 @@
             
             <a href="/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="js常见问题">
+                    <img class="thumbnail" src="/images/js.png" alt="js常见问题">
                 </p>
             </a>
             
@@ -408,7 +419,7 @@
             
             <a href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="svn使用技巧">
+                    <img class="thumbnail" src="/images/svn.png" alt="svn使用技巧">
                 </p>
             </a>
             
@@ -425,16 +436,16 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="media-left">
+            <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hexo 操作指南">
+                    <img class="thumbnail" src="/images/hexo.png" alt="Hexo 操作指南">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T03:45:43.209Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 操作指南</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T22:08:33.000Z">2019-12-20</time></div>
+                    <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 操作指南</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -459,7 +470,18 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -501,6 +523,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/shell/">
                         <span class="tag">shell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/svn/">
+                        <span class="tag">svn</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -531,7 +560,7 @@
             
             <a href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="命令工具">
+                    <img class="thumbnail" src="/images/shell.png" alt="命令工具">
                 </p>
             </a>
             
@@ -550,7 +579,7 @@
             
             <a href="/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="js常见问题">
+                    <img class="thumbnail" src="/images/js.png" alt="js常见问题">
                 </p>
             </a>
             
@@ -569,7 +598,7 @@
             
             <a href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="svn使用技巧">
+                    <img class="thumbnail" src="/images/svn.png" alt="svn使用技巧">
                 </p>
             </a>
             
@@ -586,16 +615,16 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="media-left">
+            <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hexo 操作指南">
+                    <img class="thumbnail" src="/images/hexo.png" alt="Hexo 操作指南">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T03:45:43.209Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 操作指南</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T22:08:33.000Z">2019-12-20</time></div>
+                    <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 操作指南</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -620,7 +649,18 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -666,6 +706,13 @@
                     </a>
                 </div>
                 
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/svn/">
+                        <span class="tag">svn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -690,6 +737,11 @@
                 &copy; 2020 Black&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
                 
                 </p>
             </div>
