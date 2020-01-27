@@ -1,3 +1,9 @@
+@font-face {
+  font-family: remixicon;
+  src: url("remixicon/remixicon.eot?t=1572787439022"); /* IE9*/
+  src: url("remixicon/remixicon.eot?t=1572787439022#iefix") format('embedded-opentype'), url("remixicon/remixicon.woff2?t=1572787439022") format("woff2"), url("remixicon/remixicon.woff?t=1572787439022") format("woff"), url("remixicon/remixicon.ttf?t=1572787439022") format('truetype'), url("remixicon/remixicon.svg?t=1572787439022#remixicon") format('svg'); /* iOS 4.1- */
+  font-display: swap;
+}
 /* ---------------------------------
  *       Override CSS Framework
  * --------------------------------- */
@@ -339,6 +345,35 @@ img.thumbnail {
 .has-link-grey {
   color: #7a7a7a !important;
 }
+.level-item .tag-icon {
+  position: relative;
+}
+.level-item .tag-icon:before {
+  color: #5d5a5a;
+  content: "\eec3";
+  font-family: remixicon;
+  margin-right: 0.5rem;
+  position: relative;
+  top: 2px;
+}
+.level-item .has-link-grey {
+  color: #fff !important;
+  font-size: 11px;
+  text-decoration: none;
+  display: block;
+  float: left;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 8px;
+  position: relative;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  background-color: #5d5a5a;
+  margin-right: 1rem;
+  margin-left: -5px;
+  text-transform: none;
+}
 .has-link-black-ter {
   color: #242424 !important;
 }
@@ -531,4 +566,13 @@ figure.highlight .section {
 }
 .gist .file {
   all: initial;
+}
+#aplayer {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+#aplayer .aplayer-body {
+  position: relative;
 }

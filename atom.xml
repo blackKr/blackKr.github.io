@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>向 往</title>
+  <title>小黑搞点事</title>
   
   <subtitle>面朝大海，春暖花开</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-27T13:51:11.245Z</updated>
+  <updated>2020-01-27T15:53:19.895Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,23 +17,52 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>命令工具</title>
-    <link href="http://yoursite.com/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
-    <id>http://yoursite.com/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
-    <published>2020-01-27T09:34:48.000Z</published>
-    <updated>2020-01-27T13:51:11.245Z</updated>
+    <title>uniapp兼容问题</title>
+    <link href="http://yoursite.com/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</id>
+    <published>2020-01-27T15:15:02.000Z</published>
+    <updated>2020-01-27T15:53:19.895Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;hexo操作指南&quot;&gt;&lt;a href=&quot;#hexo操作指南&quot; class=&quot;headerlink&quot; title=&quot;hexo操作指南&quot;&gt;&lt;/a&gt;hexo操作指南&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo clean    先清除（避免之前的主题和public混在一起）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo g        生成静态页面&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo s        启动本地服务器进行查看&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo d        查看后没有问题即可部署到github上&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;p&gt;&lt;a href=&quot;https://uniapp.dcloud.io/&quot;&gt;&lt;img src=&quot;/images/uniapp-logo.png&quot; alt=&quot;作者头像&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
     
+      <category term="web前端" scheme="http://yoursite.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="uniapp" scheme="http://yoursite.com/tags/uniapp/"/>
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令工具</title>
+    <link href="http://yoursite.com/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
+    <id>http://yoursite.com/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
+    <published>2020-01-27T09:34:48.000Z</published>
+    <updated>2020-01-27T15:53:19.886Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;hexo操作指南&quot;&gt;&lt;a href=&quot;#hexo操作指南&quot; class=&quot;headerlink&quot; title=&quot;hexo操作指南&quot;&gt;&lt;/a&gt;hexo操作指南&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo new &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;   创建文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo clean    先清除（避免之前的主题和public混在一起）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo g        生成静态页面&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo s        启动本地服务器进行查看&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo d        查看后没有问题即可部署到github上&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="命令" scheme="http://yoursite.com/categories/%E5%91%BD%E4%BB%A4/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
       <category term="cygwin" scheme="http://yoursite.com/tags/cygwin/"/>
     
       <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
+    
+      <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
     
   </entry>
   
@@ -42,7 +71,7 @@
     <link href="http://yoursite.com/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</id>
     <published>2020-01-27T09:08:33.000Z</published>
-    <updated>2020-01-27T13:32:28.418Z</updated>
+    <updated>2020-01-27T15:53:19.915Z</updated>
     
     <summary type="html">
     
@@ -52,6 +81,8 @@
     
     </summary>
     
+    
+      <category term="web前端" scheme="http://yoursite.com/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
@@ -63,7 +94,7 @@
     <link href="http://yoursite.com/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     <id>http://yoursite.com/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</id>
     <published>2020-01-27T05:20:23.000Z</published>
-    <updated>2020-01-27T13:33:44.130Z</updated>
+    <updated>2020-01-27T15:53:19.905Z</updated>
     
     <summary type="html">
     
@@ -71,6 +102,8 @@
     
     </summary>
     
+    
+      <category term="命令" scheme="http://yoursite.com/categories/%E5%91%BD%E4%BB%A4/"/>
     
     
       <category term="svn" scheme="http://yoursite.com/tags/svn/"/>
@@ -82,7 +115,7 @@
     <link href="http://yoursite.com/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/"/>
     <id>http://yoursite.com/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</id>
     <published>2019-12-19T22:08:33.000Z</published>
-    <updated>2020-01-27T13:36:04.689Z</updated>
+    <updated>2020-01-27T15:52:56.692Z</updated>
     
     <summary type="html">
     
@@ -90,6 +123,8 @@
     
     </summary>
     
+    
+      <category term="命令" scheme="http://yoursite.com/categories/%E5%91%BD%E4%BB%A4/"/>
     
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>

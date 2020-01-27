@@ -7,23 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Hexo 操作指南 - 小黑搞点事</title>
+<title>uniapp兼容问题 - 小黑搞点事</title>
 
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 操作指南">
-<meta property="og:url" content="http://yoursite.com/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="uniapp兼容问题">
+<meta property="og:url" content="http://yoursite.com/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="小黑搞点事">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/images/hexo.png">
-<meta property="article:published_time" content="2019-12-19T22:08:33.000Z">
-<meta property="article:modified_time" content="2020-01-27T15:52:56.692Z">
+<meta property="og:image" content="http://yoursite.com/images/uniapp.png">
+<meta property="article:published_time" content="2020-01-27T15:15:02.000Z">
+<meta property="article:modified_time" content="2020-01-27T15:53:19.895Z">
 <meta property="article:author" content="Black">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="uniapp">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/hexo.png">
+<meta name="twitter:image" content="http://yoursite.com/images/uniapp.png">
 
 
 
@@ -89,7 +88,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Hexo 操作指南" height="28">
+                <img src="/images/logo.svg" alt="uniapp兼容问题" height="28">
             
             </a>
         </div>
@@ -146,17 +145,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-19T22:08:33.000Z">2019-12-20</time>
+                <time class="level-item has-text-grey" datetime="2020-01-27T15:15:02.000Z">2020-01-27</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                <a class="has-link-grey -link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 136 个字)
+                    6 分钟 读完 (大约 839 个字)
                 </span>
                 
                 
@@ -170,25 +169,20 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Hexo 操作指南
+                uniapp兼容问题
             
         </h1>
         <div class="content">
-            <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+            <p><a href="https://uniapp.dcloud.io/"><img src="/images/uniapp-logo.png" alt="作者头像"></a></p>
 <a id="more"></a>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h1 id="组件兼容写法问题"><a href="#组件兼容写法问题" class="headerlink" title="组件兼容写法问题"></a><em>组件兼容写法问题</em></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1.全局的page：再支付宝小程序上打包后页面的最外层没有page组件，所以再设置页面高度</span><br><span class="line">  为100%时并不是手机屏幕的高度，而是元素的高度，其他程序正常;</span><br><span class="line">  </span><br><span class="line">2.scroll-view组件再设置竖向滚动时，在百度小程序上使用触底加载只会执行一次，使用</span><br><span class="line">  page方法来实现此效果;</span><br><span class="line">  </span><br><span class="line">3.使用遮罩层在百度小程序上一定要加page的背景色，否则页面样式会穿透;</span><br><span class="line"></span><br><span class="line">4.公共的组件写在components中，注意：公共组件的周期采用的是vue的周期，pages下面</span><br><span class="line">  的页面周期采用的是小程序的生命周期方式开发;</span><br><span class="line">  </span><br><span class="line">5.阻止事件冒泡可以使用vue的方式等：@click.stop&#x3D;事件名称;</span><br><span class="line"></span><br><span class="line">6.事件绑定：即便使用条件编译组件也不支持小程序的catch和bind，都要使用@去绑定;</span><br><span class="line"></span><br><span class="line">7.App.vue：相当于小程序的app.js，是程序的主入口;</span><br><span class="line"></span><br><span class="line">8.form：在小程序上button绑定的data-只有再小程序上才可以获取到;</span><br><span class="line"></span><br><span class="line">9.Map：controltap 控件点击事件不执行，验证了微信小程序也不执行，微信这个事件</span><br><span class="line">  出现了问题;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server   简写:   hexo s</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate   简写:   hexo g</span><br></pre></td></tr></table></figure>
+<h1 id="接口兼容问题"><a href="#接口兼容问题" class="headerlink" title="接口兼容问题"></a><em>接口兼容问题</em></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.获取系统信息的接口再百度小程序上会慢一些，建议设置一个延时获取，同时做好空</span><br><span class="line">  的return;</span><br><span class="line">	</span><br><span class="line">2.页面使用触底加载更多建议再底部增加一个空的view，例如：30upx的view，这样触</span><br><span class="line">  底加载更多会更灵敏一些，否则再百度和支付宝小程序上触底不灵敏;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy   简写:   hexo d</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h1 id="主要逻辑"><a href="#主要逻辑" class="headerlink" title="主要逻辑"></a><em>主要逻辑</em></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1.定位：每次程序从后台到前台都会更新当前定位信息;</span><br><span class="line"></span><br><span class="line">2.网络请求：接口和api统一封装在net下，文件的名字是该接口功能的概要，再net下只</span><br><span class="line">  需要继承初始化的父类然后去实现对应的接口名和域名即可（由于项目中有很多域名所</span><br><span class="line">  以没办法采用一个，只能去单独配置每个接口所需的域名）;</span><br><span class="line">	</span><br><span class="line">3.Model：数据会储存在model中，父类会实现基本的setModel和getModel方法，在子类</span><br><span class="line">  只需要去实现对应的Model的key以及是否需要存入内存中，会先显示model的数据同时</span><br><span class="line">  去请求net更新model（之所以会把key写在model是为了避免时间久了key的乱用导致项</span><br><span class="line">  目的缓存混乱）;</span><br><span class="line"></span><br><span class="line">4.分包：分包的写法和微信小程序是一致的，当前版本只有微信小程序支持分包;</span><br><span class="line"></span><br><span class="line">5.公共css引入：公共的通用css可以在App.vue中引入;</span><br><span class="line"></span><br><span class="line">6.通知：程序中主要使用了发送通知、注册通知、反注册通知的逻辑，例如：筛选功能，</span><br><span class="line">  点击后只会发送对应的通知然后相关的页面去监听对应的通知去做出相应的变化，而不</span><br><span class="line">  是直接去调用，做到模块之间的彻底分离;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -196,7 +190,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="tag-icon is-size-6 has-text-grey has-mr-7"></span>
-                    <a class="has-link-grey -link" href="/tags/hexo/" rel="tag">hexo</a>
+                    <a class="has-link-grey -link" href="/tags/uniapp/" rel="tag">uniapp</a>, <a class="has-link-grey -link" href="/tags/vue/" rel="tag">vue</a>
                 </div>
             </div>
         </div>
@@ -247,13 +241,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">svn使用技巧</span>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/">
+                <span class="level-item">命令工具</span>
+                <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
-        
         
     </div>
 </div>
@@ -1172,7 +1166,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Hexo 操作指南" height="28">
+                    <img src="/images/logo.svg" alt="uniapp兼容问题" height="28">
                 
                 </a>
                 <p class="is-size-7">
