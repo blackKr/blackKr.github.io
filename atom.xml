@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-27T09:50:08.068Z</updated>
+  <updated>2020-01-27T12:01:25.544Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,11 @@
     <link href="http://yoursite.com/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
     <id>http://yoursite.com/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
     <published>2020-01-27T09:34:48.000Z</published>
-    <updated>2020-01-27T09:50:08.068Z</updated>
+    <updated>2020-01-27T12:01:25.544Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;cygwin&quot;&gt;&lt;a href=&quot;#cygwin&quot; class=&quot;headerlink&quot; title=&quot;cygwin&quot;&gt;&lt;/a&gt;cygwin&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1.增加文件&lt;/strong&gt;&lt;br&gt;touch 文件名&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2.删除文件&lt;/strong&gt;&lt;br&gt;rm file_name&lt;br&gt;rmdir file_name&lt;br&gt;rm -fr file_name&lt;/p&gt;
+      &lt;h1 id=&quot;hexo操作指南&quot;&gt;&lt;a href=&quot;#hexo操作指南&quot; class=&quot;headerlink&quot; title=&quot;hexo操作指南&quot;&gt;&lt;/a&gt;hexo操作指南&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo clean    先清除（避免之前的主题和public混在一起）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo g        生成静态页面&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo s        启动本地服务器进行查看&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo d        查看后没有问题即可部署到github上&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     

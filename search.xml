@@ -3,10 +3,13 @@
   <entry>
     <title>命令工具</title>
     <url>/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<h2 id="cygwin"><a href="#cygwin" class="headerlink" title="cygwin"></a>cygwin</h2><p><strong>1.增加文件</strong><br>touch 文件名</p>
-<p><strong>2.删除文件</strong><br>rm file_name<br>rmdir file_name<br>rm -fr file_name</p>
+    <content><![CDATA[<h1 id="hexo操作指南"><a href="#hexo操作指南" class="headerlink" title="hexo操作指南"></a>hexo操作指南</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean    先清除（避免之前的主题和public混在一起）</span><br><span class="line">hexo g        生成静态页面</span><br><span class="line">hexo s        启动本地服务器进行查看</span><br><span class="line">hexo d        查看后没有问题即可部署到github上</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 
+
+
+<h1 id="cygwin"><a href="#cygwin" class="headerlink" title="cygwin"></a>cygwin</h1><p><strong>1.增加文件</strong><br>touch 文件名</p>
+<p><strong>2.删除文件</strong><br>rm file_name<br>rmdir file_name<br>rm -fr file_name</p>
 <p><strong>3.增加文件名</strong><br>mkdir 文件名</p>
 <p><code>4.使用webstorm 编写 需要将右下角设置成 适应于windows的编写</code></p>
 <p><code>5.使用命令行编写 vi 文件位置 —&gt; :wq! 保存并退出编写模式</code></p>
