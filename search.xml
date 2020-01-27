@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>命令工具</title>
+    <url>/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<h2 id="cygwin"><a href="#cygwin" class="headerlink" title="cygwin"></a>cygwin</h2><p><strong>1.增加文件</strong><br>touch 文件名</p>
+<p><strong>2.删除文件</strong><br>rm file_name<br>rmdir file_name<br>rm -fr file_name</p>
+<a id="more"></a>
+
+<p><strong>3.增加文件名</strong><br>mkdir 文件名</p>
+<p><code>4.使用webstorm 编写 需要将右下角设置成 适应于windows的编写</code></p>
+<p><code>5.使用命令行编写 vi 文件位置 —&gt; :wq! 保存并退出编写模式</code></p>
+<p><code>6.命令行操作 Backspace 跳出编写模式 i在光标前插入 a在光标后插入</code></p>
+<p><strong>7.check history command</strong><br>history</p>
+<p><strong>8.cd command</strong><br>1.cd          命令返回到默认路径<br>2.cd -        切换到刚才的路径</p>
+<p><strong>9.当前文件</strong><br>.</p>
+<p><strong>10.cp command</strong><br>cp -av file_name new_file_name<br>将整个目录复制，两目录完全一样</p>
+<p>cp -fr file_name new_file<br>将整个目录复制，并且是以非链接方式复制，当source目录带有符号链接时，两个目录不相同</p>
+<p><strong>11.change name</strong><br>mv old_name new_name</p>
+]]></content>
+      <tags>
+        <tag>cygwin</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js常见问题</title>
+    <url>/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="break-和-continue"><a href="#break-和-continue" class="headerlink" title="break 和 continue"></a>break 和 continue</h3><p>break 语句可以立即退出循环，阻止再次反复执行任何代码。</p>
+<p>continue 语句只是退出当前循环，根据控制表达式还允许继续进行下一次循环</p>
+<p>与有标签的语句一起使用:<br>  break 语句和 continue 语句都可以与有标签的语句联合使用，返回代码中的特定位置。</p>
+<a id="more"></a>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> iNum = <span class="number">0</span>;</span><br><span class="line">outermost:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;<span class="number">10</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>) &#123;</span><br><span class="line">      <span class="keyword">break</span> outermost;</span><br><span class="line">    &#125;</span><br><span class="line">            </span><br><span class="line">    iNum++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">alert(iNum); <span class="comment">//输出 "55"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="arguments-对象"><a href="#arguments-对象" class="headerlink" title="arguments 对象"></a>arguments 对象</h3><p>在函数代码中，使用特殊对象 arguments，无需明确指出参数名访问    </p>
+<p>1.检测参数个数<br>      arguments.length</p>
+<p>2.模拟函数重载</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doAdd</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">1</span>) &#123;</span><br><span class="line">    alert(<span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="number">5</span>);</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">2</span>) &#123;</span><br><span class="line">    alert(<span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="built_in">arguments</span>[<span class="number">1</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">	 </span><br><span class="line">doAdd(<span class="number">10</span>);<span class="comment">//输出 "15"</span></span><br><span class="line">doAdd(<span class="number">40</span>, <span class="number">20</span>);<span class="comment">//输出 "60"</span></span><br></pre></td></tr></table></figure>
+
+<p>3.Function 对象<br>1.length 属性<br>函数属于引用类型，所以也有属性和方法<br>ECMAScript 可以接受任意多个参数（最多 25 个）</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doAdd</span>(<span class="params">iNum</span>) </span>&#123;</span><br><span class="line">  alert(iNum + <span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">"Hi"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(doAdd.length);<span class="comment">//输出 "1"</span></span><br><span class="line">alert(sayHi.length);<span class="comment">//输出 "0"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Function-对象的方法"><a href="#Function-对象的方法" class="headerlink" title="Function 对象的方法"></a>Function 对象的方法</h3><p>Function 对象也有与所有对象共享的 valueOf() 方法和 toString() 方法。这两个方法返回的都是函数的源代码，在调试时尤其有用</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doAdd</span>(<span class="params">iNum</span>) </span>&#123;</span><br><span class="line">	alert(iNum + <span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(doAdd.toString());	</span><br><span class="line"><span class="comment">// 输出 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doAdd</span>(<span class="params">iNum</span>) </span>&#123;</span><br><span class="line">	alert(iNum + <span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="js对象"><a href="#js对象" class="headerlink" title="js对象"></a>js对象</h3><p>1.对象废除<br>    var oObject = new Object;<br>    // do something with the object here<br>    oObject = null;<br>    注意：废除对象的所有引用时要当心。如果一个对象有两个或更多引用，则要正确废除该对象，必须将其所有引用都设置为 null。<br>    每用完一个对象后，就将其废除，来释放内存，这是个好习惯。这样还确保不再使用已经不能访问的对象，从而防止程序设计错误的出现。</p>
+<p>2.String 对象<br>    1).new String()  method: toString() , valueOf() , split() // 切分成数组<br>    2).查找某字符是否存在method:<br>      1.indexOf() , lastIndexOf()  如果没有找不到子串，则返回 -1 , 否则返回具体的位置。<br>      2.localeCompare()  判断字符串位置 （ 使用时判断是否大于、等于、小于 0 ）<br>    var oStringObject = new String(“yellow”);<br>    alert(oStringObject.localeCompare(“brick”));        //输出 “1”   字符串之后<br>    alert(oStringObject.localeCompare(“yellow”));        //输出 “0”   等于<br>    alert(oStringObject.localeCompare(“zoo”));        //输出 “-1”  字符串之前</p>
+<p>3.slice() 和 substring()<br>    var oStringObject = new String(“hello world”);<br>    alert(oStringObject.slice(“3”));        //输出 “lo world”<br>    alert(oStringObject.substring(“3”));        //输出 “lo world”<br>    alert(oStringObject.slice(“3”, “7”));        //输出 “lo w”<br>    alert(oStringObject.substring(“3”, “7”));    //输出 “lo w”<br>  对于负数参数，slice() 方法会用字符串的长度加上参数，substring() 方法则将其作为 0 处理（也就是说将忽略它）。</p>
+<p>4.判断类型  instanceof , typeOf<br>    var oStringObject = new String(“hello world”);<br>    alert(oStringObject instanceof String);    //输出 “true</p>
+<p>5.Array 对象<br>    1).方法：<br>    concat()       // 连接两个或更多的数组，并返回结果。<br>    join()         // 把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。<br>    push()         // 末尾添加新元素<br>    unshift()      // 开头增加新元素<br>    shift()        // 删除并返回数组的第一个元素<br>    pop()          // 删除并返回数组的最后一个元素<br>    slice()        // 从某个已有的数组返回选定的元素<br>    splice()       // 删除元素，并向数组添加新元素。<br>    sort()         // 对数组的元素进行排序<br>    reverse()      //     颠倒数组中元素的顺序。</p>
+<p>6.boolean false的情况（false，0，“”，null，undefined和NaN ）</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// var 作用域是 上层函数体(函数及作用域）</span></span><br><span class="line"><span class="comment">// let 作用域是 自身函数体（块及作用域)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"i="</span> + i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; ++j) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"j="</span> + j);</span><br><span class="line">  &#125;, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> m = <span class="number">0</span>; m &lt; <span class="number">5</span>; ++m) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"m="</span> + n);</span><br><span class="line">    &#125;, <span class="number">1</span>);</span><br><span class="line">  &#125;)(m);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> m = <span class="number">0</span>; m &lt; <span class="number">5</span>; ++m) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"m="</span> + m);</span><br><span class="line">    &#125;, <span class="number">1</span>);</span><br><span class="line">  &#125;)(m);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; <span class="number">5</span>; ++k) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"k="</span> + k);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> l = <span class="number">0</span>; l &lt; <span class="number">5</span>; ++l) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"l="</span> + l);</span><br><span class="line">  &#125;, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>svn使用技巧</title>
+    <url>/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<h3 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h3><p>1.恢复一整个目录的文件<br>  svn revert -R .  （ . 代表当前 ）<br>2.丢弃对一个文件的修改：<br>    svn revert foo.c</p>
+<a id="more"></a>
+
+<h3 id="拉分支"><a href="#拉分支" class="headerlink" title="拉分支"></a>拉分支</h3><p>svn cp -r 需要拉到的版本号 -m “pull ios_5.0.0_10969_20171206” svn://116.62.100.209/panda/trunk/client/文件名  svn://116.62.100.209/panda/branches/release/文件名_版本_版本号_时间（例：ios_5.0.0_10969_20171206）</p>
+<h3 id="合并版本-需-cd-到-当前分支"><a href="#合并版本-需-cd-到-当前分支" class="headerlink" title="合并版本(需 cd 到 当前分支)"></a>合并版本(需 cd 到 当前分支)</h3><p>svn merge -c 需要合并的版本号 svn://116.62.100.209/panda/trunk/client/文件名 .   （ . 代表 当前路径 ）<br>提交：merge from 版本号 trunk</p>
+<p>反向合并：svn merge -c -需要合并的版本号 svn://116.62.100.209/panda/trunk/client/文件名 .   （ . 代表 当前路径 ）</p>
+<h3 id="解决合并后的冲突"><a href="#解决合并后的冲突" class="headerlink" title="解决合并后的冲突"></a>解决合并后的冲突</h3><p>svn resolved path  （ 已过时 ）<br>svn resolved –accept mine-full path （ 1.5版本后，加上–accept参数，尝试自动处理冲突 ）</p>
+<h3 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h3><p>svn add 文件名称<br>svn add *.js   （添加所有 .js 文件）</p>
+<h3 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h3><p>svn ci -m’注释信息’ path<br>svn ci -m’注释信息’   ( 提交所有改动的代码 ) ( 可以不写注释 )</p>
+<h3 id="更新到指定版本"><a href="#更新到指定版本" class="headerlink" title="更新到指定版本"></a>更新到指定版本</h3><p>svn up -r 版本号 path （ 将指定文件还原到指定的版本号 ）</p>
+<h3 id="查看文件或者目录状态"><a href="#查看文件或者目录状态" class="headerlink" title="查看文件或者目录状态"></a>查看文件或者目录状态</h3><p>svn st -v path  （ 查看文件或者目录状态 最后 ）</p>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><p>svn rm -m’注释’ path</p>
+<h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><p>svn log path</p>
+<h3 id="查看文件详细信息"><a href="#查看文件详细信息" class="headerlink" title="查看文件详细信息"></a>查看文件详细信息</h3><p>svn info path </p>
+<h3 id="比较差异"><a href="#比较差异" class="headerlink" title="比较差异"></a>比较差异</h3><p>svn diff -r m:n path ( 比较 指定文件夹 m 和 n 版本的差异 )</p>
+<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><p>cat path</p>
+<h3 id="修改文件内容"><a href="#修改文件内容" class="headerlink" title="修改文件内容"></a>修改文件内容</h3><p>vi path</p>
+<h3 id="更改文件名称"><a href="#更改文件名称" class="headerlink" title="更改文件名称"></a>更改文件名称</h3><p>svn move old_path_name new_path_name</p>
+<h3 id="常见状态"><a href="#常见状态" class="headerlink" title="常见状态"></a>常见状态</h3><font color=#ff5400>
+
+<pre><code>&quot;&quot;  没有修改
+
+&apos;A&apos;  新增  
+
+&apos;D&apos;  删除
+
+&apos;M&apos;  修改
+
+&apos;R&apos;  替代
+
+&apos;C&apos;  冲突  
+
+&apos;I&apos;  忽略
+
+&apos;?&apos;  未受控
+
+&apos;!&apos;  丢失，一般是将受控文件直接删除导致</code></pre></font>
+
+
+<h3 id="设置忽略文件"><a href="#设置忽略文件" class="headerlink" title="设置忽略文件"></a>设置忽略文件</h3><p>export SVN_EDITOR=vim<br>svn propedit svn:ignore 需要设置忽略的文件/文件夹   此时在vim中 输入需要忽略的文件夹名称即可</p>
+<h3 id="查看最近几条日志"><a href="#查看最近几条日志" class="headerlink" title="查看最近几条日志"></a>查看最近几条日志</h3><p>svn log -l 10     (查看最近10条日志 l 是小写的 L)</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hexo 操作指南</title>
+    <url>/2020/01/27/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server   简写:   hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate   简写:   hexo g</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy   简写:   hexo d</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>

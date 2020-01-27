@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>向 往</title>
+  
+  <subtitle>面朝大海，春暖花开</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-01-27T09:50:08.068Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Black</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>命令工具</title>
+    <link href="http://yoursite.com/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
+    <id>http://yoursite.com/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
+    <published>2020-01-27T09:34:48.000Z</published>
+    <updated>2020-01-27T09:50:08.068Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;cygwin&quot;&gt;&lt;a href=&quot;#cygwin&quot; class=&quot;headerlink&quot; title=&quot;cygwin&quot;&gt;&lt;/a&gt;cygwin&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1.增加文件&lt;/strong&gt;&lt;br&gt;touch 文件名&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.删除文件&lt;/strong&gt;&lt;br&gt;rm file_name&lt;br&gt;rmdir file_name&lt;br&gt;rm -fr file_name&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="cygwin" scheme="http://yoursite.com/tags/cygwin/"/>
+    
+      <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js常见问题</title>
+    <link href="http://yoursite.com/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</id>
+    <published>2020-01-27T09:08:33.000Z</published>
+    <updated>2020-01-27T09:32:15.912Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;break-和-continue&quot;&gt;&lt;a href=&quot;#break-和-continue&quot; class=&quot;headerlink&quot; title=&quot;break 和 continue&quot;&gt;&lt;/a&gt;break 和 continue&lt;/h3&gt;&lt;p&gt;break 语句可以立即退出循环，阻止再次反复执行任何代码。&lt;/p&gt;
+&lt;p&gt;continue 语句只是退出当前循环，根据控制表达式还允许继续进行下一次循环&lt;/p&gt;
+&lt;p&gt;与有标签的语句一起使用:&lt;br&gt;  break 语句和 continue 语句都可以与有标签的语句联合使用，返回代码中的特定位置。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>svn使用技巧</title>
+    <link href="http://yoursite.com/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    <id>http://yoursite.com/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</id>
+    <published>2020-01-27T05:20:23.000Z</published>
+    <updated>2020-01-27T07:42:56.030Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;恢复&quot;&gt;&lt;a href=&quot;#恢复&quot; class=&quot;headerlink&quot; title=&quot;恢复&quot;&gt;&lt;/a&gt;恢复&lt;/h3&gt;&lt;p&gt;1.恢复一整个目录的文件&lt;br&gt;  svn revert -R .  （ . 代表当前 ）&lt;br&gt;2.丢弃对一个文件的修改：&lt;br&gt;    svn revert foo.c&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 操作指南</title>
+    <link href="http://yoursite.com/2020/01/27/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/"/>
+    <id>http://yoursite.com/2020/01/27/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</id>
+    <published>2020-01-27T03:45:43.209Z</published>
+    <updated>2020-01-27T09:53:51.340Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
