@@ -15,18 +15,20 @@
 <meta property="og:url" content="http://yoursite.com/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="小黑搞点事">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/images/uniapp.png">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-01-27T15:15:02.000Z">
-<meta property="article:modified_time" content="2020-01-27T15:53:19.895Z">
+<meta property="article:modified_time" content="2020-01-28T08:03:51.792Z">
 <meta property="article:author" content="Black">
-<meta property="article:tag" content="uniapp">
 <meta property="article:tag" content="vue">
+<meta property="article:tag" content="uniapp">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/uniapp.png">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
 
 
+
+<link rel="alternative" href="/atom.xml" title="uniapp兼容问题" type="application/atom+xml">
 
 
 
@@ -73,7 +75,6 @@
 
 
 <link rel="stylesheet" href="/css/style.css">
-<link rel="alternate" href="/atom.xml" title="小黑搞点事" type="application/atom+xml">
 </head>
 <body class="is-3-column">
 
@@ -139,7 +140,8 @@
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
-    <!--都不显示图片-->
+    
+
     
     <div class="card-content article ">
         
@@ -176,13 +178,13 @@
             <p><a href="https://uniapp.dcloud.io/"><img src="/images/uniapp-logo.png" alt="作者头像"></a></p>
 <a id="more"></a>
 
-<h1 id="组件兼容写法问题"><a href="#组件兼容写法问题" class="headerlink" title="组件兼容写法问题"></a><em>组件兼容写法问题</em></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1.全局的page：再支付宝小程序上打包后页面的最外层没有page组件，所以再设置页面高度</span><br><span class="line">  为100%时并不是手机屏幕的高度，而是元素的高度，其他程序正常;</span><br><span class="line">  </span><br><span class="line">2.scroll-view组件再设置竖向滚动时，在百度小程序上使用触底加载只会执行一次，使用</span><br><span class="line">  page方法来实现此效果;</span><br><span class="line">  </span><br><span class="line">3.使用遮罩层在百度小程序上一定要加page的背景色，否则页面样式会穿透;</span><br><span class="line"></span><br><span class="line">4.公共的组件写在components中，注意：公共组件的周期采用的是vue的周期，pages下面</span><br><span class="line">  的页面周期采用的是小程序的生命周期方式开发;</span><br><span class="line">  </span><br><span class="line">5.阻止事件冒泡可以使用vue的方式等：@click.stop&#x3D;事件名称;</span><br><span class="line"></span><br><span class="line">6.事件绑定：即便使用条件编译组件也不支持小程序的catch和bind，都要使用@去绑定;</span><br><span class="line"></span><br><span class="line">7.App.vue：相当于小程序的app.js，是程序的主入口;</span><br><span class="line"></span><br><span class="line">8.form：在小程序上button绑定的data-只有再小程序上才可以获取到;</span><br><span class="line"></span><br><span class="line">9.Map：controltap 控件点击事件不执行，验证了微信小程序也不执行，微信这个事件</span><br><span class="line">  出现了问题;</span><br></pre></td></tr></table></figure>
+<h1><span id="zu-jian-jian-rong-xie-fa-wen-ti"><em>组件兼容写法问题</em></span><a href="#zu-jian-jian-rong-xie-fa-wen-ti" class="header-anchor">#</a></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1.全局的page：再支付宝小程序上打包后页面的最外层没有page组件，所以再设置页面高度</span><br><span class="line">  为100%时并不是手机屏幕的高度，而是元素的高度，其他程序正常;</span><br><span class="line">  </span><br><span class="line">2.scroll-view组件再设置竖向滚动时，在百度小程序上使用触底加载只会执行一次，使用</span><br><span class="line">  page方法来实现此效果;</span><br><span class="line">  </span><br><span class="line">3.使用遮罩层在百度小程序上一定要加page的背景色，否则页面样式会穿透;</span><br><span class="line"></span><br><span class="line">4.公共的组件写在components中，注意：公共组件的周期采用的是vue的周期，pages下面</span><br><span class="line">  的页面周期采用的是小程序的生命周期方式开发;</span><br><span class="line">  </span><br><span class="line">5.阻止事件冒泡可以使用vue的方式等：@click.stop&#x3D;事件名称;</span><br><span class="line"></span><br><span class="line">6.事件绑定：即便使用条件编译组件也不支持小程序的catch和bind，都要使用@去绑定;</span><br><span class="line"></span><br><span class="line">7.App.vue：相当于小程序的app.js，是程序的主入口;</span><br><span class="line"></span><br><span class="line">8.form：在小程序上button绑定的data-只有再小程序上才可以获取到;</span><br><span class="line"></span><br><span class="line">9.Map：controltap 控件点击事件不执行，验证了微信小程序也不执行，微信这个事件</span><br><span class="line">  出现了问题;</span><br></pre></td></tr></table></figure>
 
 
-<h1 id="接口兼容问题"><a href="#接口兼容问题" class="headerlink" title="接口兼容问题"></a><em>接口兼容问题</em></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.获取系统信息的接口再百度小程序上会慢一些，建议设置一个延时获取，同时做好空</span><br><span class="line">  的return;</span><br><span class="line">	</span><br><span class="line">2.页面使用触底加载更多建议再底部增加一个空的view，例如：30upx的view，这样触</span><br><span class="line">  底加载更多会更灵敏一些，否则再百度和支付宝小程序上触底不灵敏;</span><br></pre></td></tr></table></figure>
+<h1><span id="jie-kou-jian-rong-wen-ti"><em>接口兼容问题</em></span><a href="#jie-kou-jian-rong-wen-ti" class="header-anchor">#</a></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.获取系统信息的接口再百度小程序上会慢一些，建议设置一个延时获取，同时做好空</span><br><span class="line">  的return;</span><br><span class="line">	</span><br><span class="line">2.页面使用触底加载更多建议再底部增加一个空的view，例如：30upx的view，这样触</span><br><span class="line">  底加载更多会更灵敏一些，否则再百度和支付宝小程序上触底不灵敏;</span><br></pre></td></tr></table></figure>
 
 
-<h1 id="主要逻辑"><a href="#主要逻辑" class="headerlink" title="主要逻辑"></a><em>主要逻辑</em></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1.定位：每次程序从后台到前台都会更新当前定位信息;</span><br><span class="line"></span><br><span class="line">2.网络请求：接口和api统一封装在net下，文件的名字是该接口功能的概要，再net下只</span><br><span class="line">  需要继承初始化的父类然后去实现对应的接口名和域名即可（由于项目中有很多域名所</span><br><span class="line">  以没办法采用一个，只能去单独配置每个接口所需的域名）;</span><br><span class="line">	</span><br><span class="line">3.Model：数据会储存在model中，父类会实现基本的setModel和getModel方法，在子类</span><br><span class="line">  只需要去实现对应的Model的key以及是否需要存入内存中，会先显示model的数据同时</span><br><span class="line">  去请求net更新model（之所以会把key写在model是为了避免时间久了key的乱用导致项</span><br><span class="line">  目的缓存混乱）;</span><br><span class="line"></span><br><span class="line">4.分包：分包的写法和微信小程序是一致的，当前版本只有微信小程序支持分包;</span><br><span class="line"></span><br><span class="line">5.公共css引入：公共的通用css可以在App.vue中引入;</span><br><span class="line"></span><br><span class="line">6.通知：程序中主要使用了发送通知、注册通知、反注册通知的逻辑，例如：筛选功能，</span><br><span class="line">  点击后只会发送对应的通知然后相关的页面去监听对应的通知去做出相应的变化，而不</span><br><span class="line">  是直接去调用，做到模块之间的彻底分离;</span><br></pre></td></tr></table></figure>
+<h1><span id="zhu-yao-luo-ji"><em>主要逻辑</em></span><a href="#zhu-yao-luo-ji" class="header-anchor">#</a></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1.定位：每次程序从后台到前台都会更新当前定位信息;</span><br><span class="line"></span><br><span class="line">2.网络请求：接口和api统一封装在net下，文件的名字是该接口功能的概要，再net下只</span><br><span class="line">  需要继承初始化的父类然后去实现对应的接口名和域名即可（由于项目中有很多域名所</span><br><span class="line">  以没办法采用一个，只能去单独配置每个接口所需的域名）;</span><br><span class="line">	</span><br><span class="line">3.Model：数据会储存在model中，父类会实现基本的setModel和getModel方法，在子类</span><br><span class="line">  只需要去实现对应的Model的key以及是否需要存入内存中，会先显示model的数据同时</span><br><span class="line">  去请求net更新model（之所以会把key写在model是为了避免时间久了key的乱用导致项</span><br><span class="line">  目的缓存混乱）;</span><br><span class="line"></span><br><span class="line">4.分包：分包的写法和微信小程序是一致的，当前版本只有微信小程序支持分包;</span><br><span class="line"></span><br><span class="line">5.公共css引入：公共的通用css可以在App.vue中引入;</span><br><span class="line"></span><br><span class="line">6.通知：程序中主要使用了发送通知、注册通知、反注册通知的逻辑，例如：筛选功能，</span><br><span class="line">  点击后只会发送对应的通知然后相关的页面去监听对应的通知去做出相应的变化，而不</span><br><span class="line">  是直接去调用，做到模块之间的彻底分离;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -196,6 +198,10 @@
         </div>
         
         
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
         
     </div>
 </div>
@@ -241,6 +247,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/01/28/vue-js%E8%BD%ACts%E6%96%87%E6%A1%A3-cl2-0/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">vue js转ts文档 cl2.0</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/">
@@ -254,269 +267,28 @@
 
 
 
-
-
-<style>
-    .valine-card {
-        margin: 1.5rem auto;
-    }
-
-    .valine-card .card-content {
-        padding: 20px 20px 5px 20px;
-    }
-
-    #vcomments textarea {
-        box-sizing: border-box;
-        background: url("") 100% 100% no-repeat;
-    }
-
-    #vcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #vcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #vcomments a {
-        padding: 0 2px;
-        color: #4cbf30;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    #vcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #vcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #vcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #vcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #vcomments ul li {
-        list-style-type: disc;
-    }
-
-    #vcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #vcomments table, th, td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #vcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #vcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #vcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #vcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #vcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #vcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #vcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #vcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #vcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #vcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #vcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #vcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #vcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #vcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #vcomments dfn {
-        font-style: italic;
-    }
-
-    #vcomments small {
-        font-size: 85%;
-    }
-
-    #vcomments cite {
-        font-style: normal;
-    }
-
-    #vcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-</style>
-
-<div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="vcomments" class="card-content" style="display: grid">
-    </div>
-</div>
-
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
 <script>
     new Valine({
-        el: '#vcomments',
-        appId: 'I2UyvCiHHlhs9sUKgM0rHG33-gzGzoHsz',
-        appKey: 'dTA3IBoeBdo5by5kTa9hOocd',
-        notify: '' === 'true',
-        verify: 'false' === 'true',
-        visitor: '' === 'true',
-        avatar: 'mp',
-        pageSize: '',
-        lang: 'zh-cn',
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'I2UyvCiHHlhs9sUKgM0rHG33-gzGzoHsz',
+        app_key: 'dTA3IBoeBdo5by5kTa9hOocd',
         placeholder: '给我的文章加点评论吧~'
     });
 </script>
+
+    </div>
+</div>
+
+
 
 
 </div>
@@ -566,7 +338,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            5
+                            12
                         </p>
                     </a>
                 </div>
@@ -578,7 +350,7 @@
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
-                            2
+                            5
                         </p>
                     </a>
                 </div>
@@ -590,7 +362,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            8
+                            11
                         </p>
                     </a>
                 </div>
@@ -598,7 +370,7 @@
         </nav>
         
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+            <a class="level-item button is-link is-rounded" href="https://github.com/blackKr" target="_blank" rel="noopener">
                 关注我</a>
         </div>
         
@@ -607,7 +379,7 @@
         <div class="level is-mobile">
             
             <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
-                title="Github" href="https://github.com/ppoffice">
+                title="Github" href="https://github.com/blackKr">
                 
                 <i class="fab fa-github"></i>
                 
@@ -647,8 +419,6 @@
 </div>
 
     
-        
-    
         <div class="card widget">
     <div class="card-content">
         <div class="menu">
@@ -669,9 +439,9 @@
             </li>
         
             <li>
-                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+                <a class="level is-mobile" href="https://github.com/blackKr" target="_blank" rel="noopener">
                     <span class="level-left">
-                        <span class="level-item">PPOffice</span>
+                        <span class="level-item">black</span>
                     </span>
                     <span class="level-right">
                         <span class="level-item tag">github.com</span>
@@ -694,12 +464,28 @@
             </h3>
             <ul class="menu-list">
             <li>
+        <a class="level is-marginless" href="/categories/VR/">
+            <span class="level-start">
+                <span class="level-item">VR</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/web%E5%89%8D%E7%AB%AF/">
             <span class="level-start">
                 <span class="level-item">web前端</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/weex/">
+            <span class="level-start">
+                <span class="level-item">weex</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%E5%91%BD%E4%BB%A4/">
@@ -708,6 +494,14 @@
             </span>
             <span class="level-end">
                 <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">
+            <span class="level-start">
+                <span class="level-item">转换工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li>
             </ul>
@@ -720,12 +514,14 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/cygwin/" style="font-size: 10px;">cygwin</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/uniapp/" style="font-size: 10px;">uniapp</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a>
+        <a href="/tags/cygwin/" style="font-size: 10px;">cygwin</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/krpano/" style="font-size: 20px;">krpano</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tool/" style="font-size: 10px;">tool</a> <a href="/tags/uniapp/" style="font-size: 10px;">uniapp</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
     </div>
 </div>
     
     
         <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
         
             <div class="card widget">
     <div class="card-content">
@@ -735,18 +531,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/uniapp.png" alt="uniapp兼容问题">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T15:15:02.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">uniapp兼容问题</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:11:42.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">weex打包安卓</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        <a class="has-link-grey -link" href="/categories/weex/">weex</a>
                     </p>
                 </div>
             </div>
@@ -754,18 +544,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/shell.png" alt="命令工具">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T09:34:48.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">命令工具</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:02:32.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">转换工具</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">转换工具</a>
                     </p>
                 </div>
             </div>
@@ -773,18 +557,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/js.png" alt="js常见问题">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T09:08:33.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">js常见问题</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:56:14.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-tour-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano tour.xml</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -792,18 +570,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/svn.png" alt="svn使用技巧">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T05:20:23.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">svn使用技巧</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:42:17.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-vtourskin-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano vtourskin.xml</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -811,18 +583,12 @@
         
         <article class="media">
             
-            <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/hexo.png" alt="Hexo 操作指南">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T22:08:33.000Z">2019-12-20</time></div>
-                    <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 操作指南</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:26:53.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano 使用教程</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -845,7 +611,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -896,6 +662,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/krpano/">
+                        <span class="tag">krpano</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/shell/">
                         <span class="tag">shell</span>
                         <span class="tag is-grey">1</span>
@@ -905,6 +678,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/svn/">
                         <span class="tag">svn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tool/">
+                        <span class="tag">tool</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -926,6 +706,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/vue/">
                         <span class="tag">vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weex/">
+                        <span class="tag">weex</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -938,6 +725,7 @@
         </div>
     
 </div>
+
 
                 
 
@@ -946,6 +734,8 @@
 
 <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
+        
+    
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
@@ -954,18 +744,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/uniapp.png" alt="uniapp兼容问题">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T15:15:02.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">uniapp兼容问题</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:11:42.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">weex打包安卓</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        <a class="has-link-grey -link" href="/categories/weex/">weex</a>
                     </p>
                 </div>
             </div>
@@ -973,18 +757,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/shell.png" alt="命令工具">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T09:34:48.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">命令工具</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:02:32.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">转换工具</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">转换工具</a>
                     </p>
                 </div>
             </div>
@@ -992,18 +770,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/js.png" alt="js常见问题">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T09:08:33.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">js常见问题</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:56:14.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-tour-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano tour.xml</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -1011,18 +783,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/svn.png" alt="svn使用技巧">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T05:20:23.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">svn使用技巧</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:42:17.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-vtourskin-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano vtourskin.xml</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -1030,18 +796,12 @@
         
         <article class="media">
             
-            <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/hexo.png" alt="Hexo 操作指南">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T22:08:33.000Z">2019-12-20</time></div>
-                    <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 操作指南</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:26:53.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano 使用教程</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -1064,7 +824,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1115,6 +875,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/krpano/">
+                        <span class="tag">krpano</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/shell/">
                         <span class="tag">shell</span>
                         <span class="tag is-grey">1</span>
@@ -1124,6 +891,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/svn/">
                         <span class="tag">svn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tool/">
+                        <span class="tag">tool</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1145,6 +919,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/vue/">
                         <span class="tag">vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weex/">
+                        <span class="tag">weex</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1156,6 +937,7 @@
     
     
 </div>
+
 
             </div>
         </div>

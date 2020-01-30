@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>krpano 使用教程 - 小黑搞点事</title>
+
+
+    <meta name="description" content="全局可以使用的一些值场景scene： scene[name].content scene.count scene[name].index scene.onstart  陀螺仪事件： &lt;plugin name&#x3D;&quot;gyro&quot;  &#x2F;&gt; name值就是一会调用的key onavailable:   在支持陀螺仪的设备上调用 onunavailable：在不支持陀螺仪的设备上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="krpano 使用教程">
+<meta property="og:url" content="http://yoursite.com/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="小黑搞点事">
+<meta property="og:description" content="全局可以使用的一些值场景scene： scene[name].content scene.count scene[name].index scene.onstart  陀螺仪事件： &lt;plugin name&#x3D;&quot;gyro&quot;  &#x2F;&gt; name值就是一会调用的key onavailable:   在支持陀螺仪的设备上调用 onunavailable：在不支持陀螺仪的设备上">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="article:published_time" content="2020-01-28T08:26:53.000Z">
+<meta property="article:modified_time" content="2020-01-28T08:41:36.126Z">
+<meta property="article:author" content="Black">
+<meta property="article:tag" content="krpano">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="krpano 使用教程" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+
+    <!-- 插入音乐 -->
+    <!--<link rel="stylesheet" href="/aPlayer/APlayer.min.css">-->
+    <!--<div id="aplayer" ></div>-->
+    <!--<script type="text/javascript" src="/aPlayer/APlayer.min.js"></script>-->
+    <!--<script type="text/javascript" src="/aPlayer/music.js"></script>-->
+
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="krpano 使用教程" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">首页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归类</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/blackKr">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-28T08:26:53.000Z">2020-01-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    32 分钟 读完 (大约 4759 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                krpano 使用教程
+            
+        </h1>
+        <div class="content">
+            <h1><span id="quan-ju-ke-yi-shi-yong-de-yi-xie-zhi"><em><strong>全局可以使用的一些值</strong></em></span><a href="#quan-ju-ke-yi-shi-yong-de-yi-xie-zhi" class="header-anchor">#</a></h1><pre><code>场景scene：
+scene[name].content
+scene.count
+scene[name].index
+scene.onstart
+
+陀螺仪事件：
+&lt;plugin name=&quot;gyro&quot;  /&gt; name值就是一会调用的key
+onavailable:   在支持陀螺仪的设备上调用
+onunavailable：在不支持陀螺仪的设备上调用
+onenable： 在陀螺仪启用的时候调用
+ondisable： 在陀螺仪禁用的时候调用</code></pre><a id="more"></a>
+
+<h1><span id="js-wen-jian-diao-yong-krpano-fang-fa"><em><strong>js 文件调用krpano方法</strong></em></span><a href="#js-wen-jian-diao-yong-krpano-fang-fa" class="header-anchor">#</a></h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*定义控件*/</span></span><br><span class="line"><span class="keyword">var</span> krpano = <span class="built_in">document</span>.getElementById(<span class="string">"krpanoSWFObject"</span>);</span><br><span class="line"><span class="comment">/*获取变量*/</span></span><br><span class="line"><span class="keyword">var</span> fov = <span class="built_in">Number</span>(krpano.get(<span class="string">"view.fov"</span>));</span><br><span class="line"><span class="keyword">var</span> hlookat = <span class="built_in">Number</span>(krpano.get(<span class="string">"view.hlookat"</span>));</span><br><span class="line"><span class="keyword">var</span> vlookat = <span class="built_in">Number</span>(krpano.get(<span class="string">"view.vlookat"</span>));</span><br><span class="line"><span class="comment">/*放大*/</span></span><br><span class="line"> fov -= <span class="number">10.0</span>;</span><br><span class="line"> krpano.set(<span class="string">"view.fov"</span>, fov);</span><br><span class="line"><span class="comment">/*缩小*/</span></span><br><span class="line"> fov += <span class="number">10.0</span>;</span><br><span class="line"> krpano.set(<span class="string">"view.fov"</span>, fov);</span><br><span class="line"><span class="comment">/*左旋转*/</span></span><br><span class="line"> hlookat += <span class="number">10.0</span>;</span><br><span class="line"> krpano.set(<span class="string">"view.hlookat"</span>, hlookat);</span><br><span class="line"><span class="comment">/*右旋转*/</span></span><br><span class="line"> hlookat -= <span class="number">10.0</span>;</span><br><span class="line"> krpano.set(<span class="string">"view.hlookat"</span>, hlookat);</span><br><span class="line"><span class="comment">/*上倾斜*/</span></span><br><span class="line"> vlookat -= <span class="number">10.0</span>;</span><br><span class="line"> krpano.set(<span class="string">"view.vlookat"</span>, vlookat);</span><br><span class="line"><span class="comment">/*下倾斜*/</span></span><br><span class="line"> vlookat += <span class="number">10.0</span>;</span><br><span class="line"> krpano.set(<span class="string">"view.vlookat"</span>, vlookat);</span><br><span class="line"><span class="comment">/*自动旋转*/</span></span><br><span class="line"> krpano.set(<span class="string">"autorotate.enabled"</span>, <span class="literal">true</span>);</span><br><span class="line"><span class="comment">/*VR模式*/</span></span><br><span class="line"> krpano.call(<span class="string">"WebVR.enterVR();"</span>);</span><br><span class="line"><span class="comment">/*全屏*/</span></span><br><span class="line"> krpano.set(<span class="string">"fullscreen"</span>, <span class="literal">true</span>);</span><br><span class="line"><span class="comment">/*停止旋转*/</span></span><br><span class="line"> krpano.set(<span class="string">"autorotate.enabled"</span>, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 以上的方法如放大缩小是不带动画的，有卡顿的感觉。下面的方法利用setTimeout方法实现平滑过渡。</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">/*放大*/</span></span><br><span class="line"> krpano.set(<span class="string">"fov_moveforce"</span>,<span class="number">-1</span>);</span><br><span class="line"> setTimeout(<span class="string">"krpano.set('fov_moveforce',0)"</span>,<span class="number">200</span>);</span><br><span class="line"> <span class="comment">/*缩小*/</span></span><br><span class="line"> krpano.set(<span class="string">"fov_moveforce"</span>,<span class="number">1</span>);</span><br><span class="line"> setTimeout(<span class="string">"krpano.set('fov_moveforce',0)"</span>,<span class="number">200</span>);</span><br><span class="line"> <span class="comment">/*左旋转*/</span></span><br><span class="line"> krpano.set(<span class="string">"hlookat_moveforce"</span>,<span class="number">-1</span>);</span><br><span class="line"> setTimeout(<span class="string">"krpano.set('hlookat_moveforce',0)"</span>,<span class="number">200</span>);</span><br><span class="line"> <span class="comment">/*右旋转*/</span></span><br><span class="line"> krpano.set(<span class="string">"hlookat_moveforce"</span>,<span class="number">1</span>);</span><br><span class="line"> setTimeout(<span class="string">"krpano.set('hlookat_moveforce',0)"</span>,<span class="number">200</span>);</span><br><span class="line"> <span class="comment">/*上倾斜*/</span></span><br><span class="line"> krpano.set(<span class="string">"vlookat_moveforce"</span>,<span class="number">-1</span>);</span><br><span class="line"> setTimeout(<span class="string">"krpano.set('vlookat_moveforce',0)"</span>,<span class="number">200</span>);</span><br><span class="line"> <span class="comment">/*下倾斜*/</span></span><br><span class="line"> krpano.set(<span class="string">"vlookat_moveforce"</span>,<span class="number">1</span>);</span><br><span class="line"> setTimeout(<span class="string">"krpano.set('vlookat_moveforce',0)"</span>,<span class="number">200</span>);</span><br></pre></td></tr></table></figure>
+
+
+<h1><span id="tour-xml-can-shu-pei-zhi-shuo-ming"><strong><em>tour.xml参数配置说明</em></strong></span><a href="#tour-xml-can-shu-pei-zhi-shuo-ming" class="header-anchor">#</a></h1><pre><code>[
+  krpano    xml文件的根元素，所有的元素必须放在该元素中
+  version     创建xml文件的krpano版本，默认1.19
+  onstart    将在xml加载和解析后直接调用
+]
+
+[ include 加载文件 加载的内容将替换include元素  英文：包括 ]</code></pre><p><img src="/images/krpano/tour-xml.jpeg" alt></p>
+<pre><code> [
+  skin_settings    默认皮肤的各项参数
+  maps    是否使用必应地图或者谷歌地图
+ ]
+
+[ maps_type HTML5下选择使用必应地图或者谷歌地图，值为bing或者google  谷歌地图不提供flash版本，因此在flash内核下默认使用必应地图 ]
+  maps_type=&quot;google&quot;
+  [maps_bing_api_key     在微软申请的地图api的key 免费 ]
+ maps_bing_api_key=&quot;&quot;
+  [maps_google_api_key     在微软申请的地图api的key 免费 ]
+ maps_google_api_key=&quot;&quot;
+  [ maps_zoombuttons     是否显示在线地图的缩放按钮 ]
+ maps_zoombuttons=&quot;false&quot;
+ [ gyro    是否使用陀螺仪（重力感应），只会在移动端的浏览器实现 默认开启 ]
+ gyro=&quot;true&quot;                   
+ webvr=&quot;true&quot;
+ webvr_gyro_keeplookingdirection=&quot;false&quot;
+ webvr_prev_next_hotspots=&quot;true&quot;
+ littleplanetintro=&quot;false&quot;
+ title=&quot;true&quot;
+ thumbs=&quot;true&quot;
+[
+    thumbs_width    缩略图宽度
+    thumbs_height    缩略图高度
+    thumbs_padding    每个缩略图之间的距离
+    thumbs_crop=&quot;0|40|240|160&quot;    从某一个坐标开始截取一个区域  从“x=0 y=40”的坐标点开始，截取一个x=240像素，y=160像素的图片
+]
+ thumbs_width=&quot;120&quot; thumbs_height=&quot;80&quot; thumbs_padding=&quot;10&quot;          thumbs_crop=&quot;0|40|240|160&quot;
+ [thumbs_opened     是否在打开漫游时显示缩略图 ]
+ thumbs_opened=&quot;false&quot;
+ [thumbs_text     是否显示缩略图图文本 ]
+ thumbs_text=&quot;false&quot;
+ [thumbs_dragging     是否允许拖拽缩略图左右滑动 ]
+ thumbs_dragging=&quot;true&quot;
+  [ thumbs_onhoverscrolling     是否允许缩略图根据鼠标运动方向自动往两侧滑动 ]
+ thumbs_onhoverscrolling=&quot;false&quot;
+  [ thumbs_scrollbuttons     是否显示缩略图两段的箭头按钮 ]
+ thumbs_scrollbuttons=&quot;false&quot;
+  [ thumbs_scrollindicator     是否显示缩略图下方的滑动条 ]
+ thumbs_scrollindicator=&quot;false&quot;
+ thumbs_loop=&quot;false&quot;
+ tooltips_buttons=&quot;false&quot;
+  [ tooltips_thumbs     是否在缩略图上显示提示文字 ]
+ tooltips_thumbs=&quot;false&quot;
+  [ tooltips_hotspots 是否在热点上显示提示文字 ]
+ tooltips_hotspots=&quot;false&quot;
+  [ tooltips_mapspots 是否在地图热点上显示提示文字 是地图不是漫游场景 ]
+ tooltips_mapspots=&quot;false&quot;
+ deeplinking=&quot;false&quot;
+ loadscene_flags=&quot;MERGE&quot;
+ loadscene_blend=&quot;OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)&quot;
+ loadscene_blend_prev=&quot;SLIDEBLEND(0.5, 180, 0.75, linear)&quot;
+ loadscene_blend_next=&quot;SLIDEBLEND(0.5,   0, 0.75, linear)&quot;
+ loadingtext=&quot;loading...&quot;
+ layout_width=&quot;100%&quot;
+ layout_maxwidth=&quot;814&quot;
+ controlbar_width=&quot;-24&quot;
+ controlbar_height=&quot;40&quot;
+  [ controlbar_offset 控制整条导航栏的垂直位置，数字越小越往下 ]
+ controlbar_offset=&quot;20&quot;
+ controlbar_offset_closed=&quot;-40&quot;
+ controlbar_overlap.no-fractionalscaling=&quot;10&quot;
+ controlbar_overlap.fractionalscaling=&quot;0&quot;
+ design_skin_images=&quot;vtourskin.png&quot;
+ design_bgcolor=&quot;0x2D3E50&quot;
+ design_bgalpha=&quot;0.8&quot;
+ design_bgborder=&quot;0&quot;
+ design_bgroundedge=&quot;1&quot;
+ design_bgshadow=&quot;0 4 10 0x000000 0.3&quot;
+ design_thumbborder_bgborder=&quot;3 0xFFFFFF 1.0&quot;
+ design_thumbborder_padding=&quot;2&quot;
+ design_thumbborder_bgroundedge=&quot;0&quot;
+ design_text_css=&quot;color:#FFFFFF; font-family:Arial;&quot;
+ design_text_shadow=&quot;1&quot;
+ /&gt;
+
+
+if(startscene === null OR !scene[get(startscene)],   copy(startscene,scene[0].name); );
+loadscene(get(startscene), null, MERGE);
+if(startactions !== null, startactions() );
+
+[
+  view    视图元素 在xml中可以用来设置启动视图设置
+  hlookat    水平方向以球面坐标为单位 默认0.0 取值范围-180°至+180°
+  vlookat    以度为单位的球面坐标单位 默认0.0 取值范围-90°至+90°
+  fov    目前的视角度数 默认90.0 取值范围0.0至179.0
+  fovmin    fov最小值 这将限制全景图放大
+  fovmax    fov最大值 这将限制全景图缩小
+  maxpixelzoom    观景图的最大像素缩放系数
+]
+
+
+[ preview    预览图片的url地址 ]
+
+
+[
+  image     定义全景图像
+  type    类型
+    CUBE    立方体全景图 - 六张图像
+    CUBESTRIP    单一图像中的立体全景图 支持的立方体格式为6*1，1*6，3*2，2*3  立方体：L F R B U D  
+    SPHERE    球形、等角全景图像 通过设置自定义hfov vfov和voffset可以进行局部全景图
+    CYLINDER    圆柱形全景图像，  通过设置自定义hfov vfov和voffset可以进行局部全景图  
+      未设置    自动检测类型（仅适用于多重影像） 
+  multirs     启用平铺多分辨率图像的使用 当值true 表示image元素需要包含多个level元素
+  tilesize    定义多重图像的平铺大小                                                 
+]
+
+button(可选)
+是否展示显示和隐藏网格菜单的默认按钮
+默认值=true
+padding_top(可选)
+缩略图滚动区域的顶部边距
+对手机端该边距将被设置为0
+默认值=75
+padding_bottom(可选)
+缩略图滚动区域的底部边距
+对手机端该边距将被设置为0
+默认值=75
+width_margin(可选)
+缩略图滚动区域的左右边距
+对手机端该边距将被设置为0
+默认值=0
+grid_bgcolor(可选)
+背景颜色
+默认值=0x000000
+grid_bgalpha(可选)
+背景透明度
+默认值=0.7
+display_title(可选)
+展示网格菜单标题
+默认值=true
+grid_title(可选)
+网格菜单标题
+默认值=GRID MENU
+grid_title_css(可选)
+网格菜单标题的CSS样式
+默认值=color:#ffffff;font-family:Raleway;font-size:35px;
+group(可选)
+是否按照分组安排缩略图
+注意不在分组中的场景不会被展示
+默认值=false
+current(可选)
+只展示当前分组的缩略图
+默认值=false
+cat_container_height(可选)
+分组标题容器的高度
+默认值=35
+cat_container_border(可选)
+分组标题容器的边框设置
+默认值=0,0,1,0 0xffffff 1.00
+cat_container_title_css(可选)
+分组标题的CSS样式
+默认值=color:#ffffff;font-family:Raleway;font-size:25px;
+cat_container_title_align(可选)
+分组标题的对齐位置
+默认值=left
+cat_container_border_height(可选)
+分组标题的底部边距
+默认值=1
+display_cat_desc(可选)
+是否显示分组的描述
+默认值=true
+cat_desc_css(可选)
+分组描述的CSS样式
+默认值=color:#ffffff;font-family:Raleway;font-size:14px;text-align:left
+thumbs_crop(可选)
+缩略图的CROP属性
+默认值=0|75|240|150
+thumbs_width(可选)
+缩略图的宽度
+默认值=240
+thumbs_height(可选)
+缩略图的高度
+默认值=150
+thumbs_padding(可选)
+缩略图的边距
+默认值=25
+thumbs_scale (可选)
+按照百分比为单位的最大缩略图尺寸
+默认值=100
+active_thumb_border(可选)
+激活的缩略图的边框设置
+默认值=3 0xffffff 1.00
+display_thumb_title(可选)
+是否展示缩略图标题
+默认值=true
+thumb_title_align(可选)
+缩略图标题的对齐方式
+默认值=bottom
+thumb_title_x(可选)
+缩略图标题的X位置
+默认值=0
+thumb_title_y(可选)
+缩略图标题的Y位置
+默认值=5
+thumb_title_css(可选)
+缩略图标题的CSS样式
+默认值=color:#ffffff;font-family:Raleway;font-size:16px;text-align:left;
+thumb_title_roundedge(可选)
+缩略图标题的背景圆角设置
+默认值=5
+thumb_title_background(可选)
+缩略图标题背景是否显示
+默认值=true
+thumb_title_backgroundcolor(可选)
+缩略图标题背景颜色
+默认值=0x000000
+thumb_title_backgroundalpha(可选)
+缩略图标题背景透明度
+默认值=0.8
+thumb_title_border(可选)
+缩略图标题背景边框是否显示
+默认值=false
+thumb_title_borderwidth(可选)
+缩略图标题边框宽度
+默认值=1
+thumb_title_bordercolor(可选)
+缩略图标题边框颜色
+默认值=0xffffff
+thumb_title_borderalpha(可选)
+缩略图标题边框透明度
+默认值=1
+thumb_title_padding(可选)
+缩略图标题边距
+默认值=3 10
+display_thumb_desc(可选)
+是否在缩略图上显示场景描述
+默认值=true
+thumb_desc_css(可选)
+场景描述的CSS样式
+默认值=color:#ffffff;font-family:Raleway;font-size:15px;text-align:center
+thumb_desc_bg_color(可选)
+场景描述的背景颜色
+默认值=0x000000
+thumb_desc_bg_alpha(可选)
+场景描述的背景透明度
+默认值=0.6
+thumb_desc_padding(可选)
+场景描述的边距
+默认值=8 15
+loadscene_flags(可选)
+Loadscene动作的flag参数
+默认值=MERGE
+loadscene_blend(可选)
+Loadscene动作的blend参数
+默认值=BLEND(1)
+vcenter(可选)
+网格菜单是否垂直居中
+默认值=false</code></pre><h1><span id="events-chang-yong-shi-jian"><em><strong>events常用事件</strong></em></span><a href="#events-chang-yong-shi-jian" class="header-anchor">#</a></h1><pre><code>events 可调用各类型的事件，如载入过程中不同阶段触发的不同行为,设置事件的响应。
+全局krpano事件:
+一个不具有name属性的&lt;events&gt;元素定义的事件都是全局事件。通常只有一个全局事件。当有另一个&lt;events&gt;标签定义相同的事件时，之前定义的同一事件就会被覆写。
+注意–当载入另一个xml文件或其他场景时，所有全局事件将保留，它们不会发生改变，除非在新的xml文件或场景中被再次定义。
+&lt;events     name=&quot;&quot;
+            keep=&quot;false&quot;
+        onenterfullscreen=&quot;&quot;          进入全屏时执行
+        onexitfullscreen=&quot;&quot;           退出全屏时执行
+        onxmlcomplete=&quot;&quot;              XML文件加载完成时执行
+        onpreviewcomplete=&quot;&quot;          预览图加载完成时执行
+        onloadcomplete=&quot;&quot;             全景切片加载完毕时执行
+        onnewpano=&quot;&quot;                  启动新的全景场景时执行
+        onremovepano=&quot;&quot;               场景被移除时执行（加载新场景前）
+        onnewscene=&quot;&quot;                 新场景加载完成时执行
+        onloaderror=&quot;&quot;                加载错误时执行，执行被设置后，屏幕将不显示默认的错误信息
+        onkeydown=&quot;&quot;                  键盘按下时执行
+        onkeyup=&quot;&quot;                    键盘抬起时执行
+        onclick=&quot;&quot;                    鼠标点击时执行
+        onsingleclick=&quot;&quot;            单击
+        ondoubleclick=&quot;&quot;             双击
+        onmousedown=&quot;&quot;                当鼠标按下时执行
+        onmouseup=&quot;&quot;                  当鼠标松开时执行
+        onmousewheel=&quot;&quot;               当鼠标滚轮滚动时执行
+        oncontextmenu=&quot;&quot;                  右键菜单
+        onidle=&quot;&quot;                     无交互空闲时执行
+        onviewchange=&quot;&quot;               场景视图改变时执行（渲染开始时）
+        onviewchanged=&quot;&quot;              场景视图改变后执行（渲染完成时）
+        onresize=&quot;&quot;                   全景尺寸改变时执行
+        onautorotatestart=&quot;&quot;    自动旋转开始时执行
+        onautorotatestop=&quot;&quot;    自动旋转停止时执行
+        onautorotateoneround=&quot;&quot; 自动旋转一圈时执行
+        onautorotatechange=&quot;&quot;  自动旋转状态改变时执行
+        /&gt;
+独立局部krpano事件:
+一个具有name属性的&lt;events&gt;元素定义的事件都是独立事件。它可以包含所有类型的事件，但它们不会覆写全局事件，它们是另外进行调用的。这些被“命名”的&lt;events&gt;元素同样具有keep属性（默认值为false）。这意味着没有keep=”true”的&lt;events&gt;元素在新全景载入时将会被自动移除。
+提示–命名的事件能够在不影响其他插件或xml代码的基础下在独立的插件和代码中发生作用。</code></pre><h1><span id="vtourskin-xml-pei-zhi-shuo-ming-wen-dang"><em><strong>vtourskin.xml配置说明文档</strong></em></span><a href="#vtourskin-xml-pei-zhi-shuo-ming-wen-dang" class="header-anchor">#</a></h1><pre><code>control
+[ mouse    鼠标的控制模式     drag 拖动全景图片   moveto 移动全景图片 drag3d 自由轴3d拖动  ]
+    [ touch    鼠标的控制模式     drag 拖动全景图片  moveto 移动全景图片 drag3d 自由轴3d拖动     ]
+        touch=&quot;drag&quot;
+        [ zoomtocursor    当通过鼠标滚轮启用和放大时，全景图将缩放到鼠标光标的位置 ]
+        zoomtocursor=&quot;false&quot;
+        [ zoomoutcursor    当通过鼠标滚轮缩小时，全景图将远离鼠标光标的位置，否则，全景图片将远离屏幕中央 ]
+        zoomoutcursor=&quot;false&quot;
+        [ draginertia    控制拖动的惯性，值越高，释放控制时视图旋转的动量越少 ]
+        draginertia=&quot;0.1&quot;
+        [ dragfriction   拖动控制模式的视图旋转动能的摩擦。值越低，移动越快停止  ]
+        dragfriction=&quot;0.9&quot;
+        [ movetoaccelerate    移动加速度 值越高 全景图片越快开始旋转 ]
+        movetoaccelerate=&quot;1.0&quot;
+        movetospeed=&quot;10.0&quot;
+        [ movetofriction    移动控制模式的视图旋转动能的摩擦。值越低，移动越快停止]
+        movetofriction=&quot;0.8&quot;
+        [ keybaccelerate    键盘/按钮的加速控制移动 ]
+        keybaccelerate=&quot;0.09&quot;
+        [ keyfriction    键盘/鼠标的移动摩擦控制 ]
+        keybfriction=&quot;0.94&quot;
+        [ keybfovchange    鼠标滚轮缩放（以度为单位） ]
+        keybfovchange=&quot;0.25&quot;
+        mousefovchange=&quot;1.0&quot;
+        [ fovspeed    最大fov变化/缩放速度（用于鼠标滚轮和键盘/按钮控制） ]
+        fovspeed=&quot;3.0&quot;
+        [ fovfriction    fov的摩擦变化 ]
+        fovfriction=&quot;0.9&quot;
+        [ bouncinglimits    击中平移或者缩放限制时弹回（仅限拖动控制） ]
+        bouncinglimits=&quot;true&quot;
+    /&gt;
+cursors
+[ standard   鼠标光标默认标准  ]
+    [ dragging   鼠标光标拖动  ]
+    dragging=&quot;move&quot;
+    [ moving   鼠标光标移动  ]
+    moving=&quot;move&quot;
+/&gt;
+layer/plugin    用于包括图像，徽标，按钮或者动态插件。组合，叠加，分层数。推荐使用layer
+[ name    当前图层/插件元素的名称 ]
+    [ keep    在加载新的全景图时，应该保留或删除此图层/插件元素 ]
+    keep=&quot;true&quot;
+    vr=&quot;true&quot; devices=&quot;mobile&quot;
+    [ url    图层/插件图像文件的路径 支持的文件类型：JPG PNG GIF SWF格式 ]
+    url=&quot;rotate_device.png&quot;
+    [ scale    层/插件的缩放 ]
+    scale=&quot;0.5&quot;
+    [
+        parent     将当前层/插件分配为另外一层/插件或者热点元素的子元素。
+        STAGE    此父级允许将图层/插件OUTSIDE对齐到泉景区区域
+        BGLAYER    这个父级允许对齐一个图层/插件的全景图
+    ]
+    parent=&quot;STAGE&quot;
+    align=&quot;top&quot;
+    edge=&quot;center&quot;
+    y=&quot;28%&quot;
+
+    [ alpha    图层/插件元素的透明度 0.0=完全透明 1.0=完全可见 ]
+    alpha=&quot;0.0&quot;
+    [ enabled    启用图层/插件元素来接受鼠标事件，当设置为&quot;false&quot;时，鼠标事件将被路由到底层元素 ]
+    enabled=&quot;false&quot;
+    [ bgcapture    在容器元素的背景上捕获鼠标事件 ]
+bgcapture=&quot;false&quot;
+/&gt;
+    keep=&quot;true&quot;
+    url=&quot;&quot;
+    html5_url=&quot;%SWFPATH%/plugins/gyro2.js&quot;
+    softstart=&quot;1.0&quot;
+    enabled=&quot;false&quot;
+    onavailable=&quot;skin_arrange_buttons();&quot;
+    devices=&quot;html5&quot;
+/&gt;
+style    通过一个或者多个style元素加载属性样式（注：在样式中定义的属性不能覆盖插件）
+    depth=&quot;800&quot;
+    scale=&quot;0.5&quot;
+    distorted=&quot;true&quot;
+    ath=&quot;0&quot;
+    atv=&quot;45&quot;
+    alpha=&quot;0.5&quot;
+    [ onclick    当图层/插件元素上鼠标单击时将会调用的操作/函数 ]
+    onclick=&quot;skin_hotspotstyle_click();&quot;
+    [ onover    当鼠标移动到图层/插件元素上时被调用的动作/函数 ]
+    onover=&quot;tween(scale,0.55);&quot;
+    [ onout    当鼠标移出layer元素时将被调用的动作/函数 ]
+    onout=&quot;tween(scale,0.5);&quot;
+    [ onloaded    当图层/插件图像的加载完成时被调用的动作/函数 ]
+    onloaded=&quot;if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips);)&quot;
+/&gt;
+event    krpano事件 - 用于在特定事件发生时调用动作或者函数
+[ name    当定义一个name属性时，这个事件元素将是独立的本地事件元素  没有name属性设置了全局属性 ]
+
+        keep=&quot;true&quot;
+        [
+            onxmlcomplete    当xml文件或者xml场景代码加载完成时，将会调用此事件
+            在此事件之后，将开始用户控制全景观看和动态加载全景图片
+        ]
+        onxmlcomplete=&quot;set(events[skin_events].onxmlcomplete,null);
+        skin_startup();&quot;
+        [ onnewpano    当有新的全景图像，并且有关它的所有信息（type,imagesize,hfov,vfov）可用时，将调用此事件 ]
+        onnewpano=&quot;skin_showloading(true);
+        skin_update_scene_infos();
+        skin_deeplinking_update_url();&quot;
+        [ onremovepano    当目前的全景相片将被移除时 将会调用此事件 ]
+        onremovepano=&quot;skin_showloading(true);&quot;
+        [ onloadcomplete    当完成全景图像的加载时，将调用此事件
+            当使用多分辨率图像时，当前视图的所有部分被完全加载时 改事件将被调用一次
+        ]
+        onloadcomplete=&quot;skin_showloading(false);&quot;
+        onidle=&quot;skin_deeplinking_update_url();&quot;
+        [
+            onresize    
+                当查看器的大小（或者区域大小）已更改时，调用此事件
+                每次加载新的全景图时，onresize事件将被调用
+                新的查看器大小将存储在stagewidth和stageheight变量中
+                新区域大小将通过area.pixelwidth和area.pixelheight变量提供
+        ]
+        onresize=&quot;skin_onresize();&quot;
+        [ onenterfullscreen    当切换到全屏模式时，将会调用此事件 ]
+        onenterfullscreen.fullscreensupport=&quot;set(layer[skin_btn_fs].crop, &apos;64|576|64|64&apos;);&quot;
+        [ onexitfullscreen    当从全屏切换成正常的窗口时，将会调用此事件 ]
+        onexitfullscreen.fullscreensupport=&quot;set(layer[skin_btn_fs].crop, &apos;0|576|64|64&apos;);&quot;
+        [
+            onkeydown   当按下一个键时，将会调用此事件
+                        按键的键码将存储在键码变量中
+                        当按住键时，系统会自动发送重复的onkeydown事件。可以通过control.keydownrepeat设置选择性地禁用
+        ]
+    onkeydown=&quot;skin_keydown_event();&quot;
+/&gt;
+action  使用active元素可以定义krpano操作 类似于其他脚本或编程语言中的函数或过程
+        有两种操作类型：    正常的krpano操作 - 适用于Flash和HTML5
+                            javascript krpano操作 - 仅限HTML5
+
+        正常的krpano操作
+
+                    active(  ) : 操作2(  ):
+                    ...
+
+        javascript krpano操作      
+
+hotspot     热点(热点是全景中的区域，可以在鼠标悬浮或点击时进行反应。可以用来加载其他全景图，链接到其他网址，更改观看)
+            两种类型 ： 多边形热点    由一组点定义的区域
+                        图像热点    由图像或Flash电影作为热点
+                        如果设置了“URL”属性，就是图像热点。如果没有，并且有点 那么就是多边行热点
+    [
+        type    热点类型
+                image ：   默认情况下 使用url文件作为图像
+                text : 使用热点当做文本域
+    ]
+    type=&quot;image&quot;
+    [ keep    是否在加载新的全景图片时保留此热点元素 ]
+    keep=&quot;true&quot;
+    [ enabled    是否启用热点元素接收鼠标事件 ]
+    enabled=&quot;true&quot;
+    [ handcursor   鼠标悬浮在热点元素上时显示手指  ]
+    handcursor=&quot;true
+    [ maskchildren    当设置为yrue时，所有在父级元素之外的子元素都将被屏蔽 ]
+    maskchildren=&quot;true&quot;
+    [
+        zorder  热点元素的深层“Z”排列 重叠元素的设置
+                这个值可以是任何字符串或者数字。所有带有zorder设置的热点元素将按给定值排序
+                当没有设置时，顺序是未定义的，取决于浏览器的加载完成顺序
+                zorder 应该是0-100之间的值，没有负值
+    ]
+    zorder=&quot;&quot;
+    style=&quot;skin_base|webvr_menu_style&quot;
+    [ ath atv    热点的球面坐标 以度为单位。热点图像将通过dage设定的点对齐 ]
+    ath=&quot;0.0&quot;
+    atv=&quot;0.0&quot;
+    [ edge 热点元素的边缘/锚点  值有：lefttop left leftbottom top center bottom righttop right rightbottom ]
+    edge=&quot;center&quot;
+    [ zoom 缩放时 热点图像的大小与pano的大小发生变化 ]
+    zoom=&quot;false&quot;
+    [
+       如果在三维空间中，热点图像与当前的phano/viewing被扭曲了。当扭曲的使用rx/ry/rz设置来旋转三维空间热点是
+            一. 当启用时，将使用1000像素的大小作为像素大小的参考。这1000个像素覆盖了三维空间90度的视野
+            二. 扭曲的热点不能也不应该有子元素。
+            三. 显示Flash插件，因为失真的热点应该是可能的，但不是直接与他们交互。这种情况下。插件不会直接显示，只是一种屏幕截图的图像
+            四. 在HTML5中，通过zorder对正常和扭曲的热点进行排序是不可能的，zorder2设置还可以作为正常热点使用，以将他们移动到扭曲的热点之上
+    ]
+    distorted=&quot;flase&quot;
+    [ rx/ry/rz    在x/y/z轴上的三维旋转，只有在distorted是true时使用 ]
+    rx=&quot;0.0&quot;
+    ry=&quot;0.0&quot;
+    rz=&quot;0.0&quot;
+    [ width/height    热点图像的目标大小 热点图像将会缩放到这个大小 ]
+    width=&quot;&quot;
+    height=&quot;&quot;
+    [ scale    热点元素的扩展 ]
+    scale=&quot;&quot;
+    [ rotate   热点元素的旋转度  ]
+    rotate=&quot;0.0&quot;
+    [ alpha   热点元素的透明度  ]
+    alpha=&quot;1.0&quot;
+    crop=&quot;0|64|64|64&quot;
+    ox=&quot;-64&quot;
+    onover=&quot;tween(scale,0.6);&quot;
+    onout=&quot;tween(scale,0.5);&quot;
+    onhover=&quot;&quot;
+    ondown=&quot;&quot;
+    onup=&quot;&quot;
+    onloaded=&quot;&quot;
+    vr_timeout=&quot;750&quot;
+    onclick=&quot;skin_nextscene_loop(-1);&quot;
+    [ visible    热点是否可见 ]
+    visible=&quot;false&quot;
+    devices=&quot;html5.and.webgl&quot;
+/&gt;
+network    网络设置
+[ retrycount    在显示错误信息之前，自动下载重新加载服务器错误的次数 ]
+memory    内存使用设置
+[ maxmem    
+    为MB解码的图像块设置最大内存使用量。当达到maxmem限制时，当前未使用（需要/可见）图快的内存将被返回
+    当前默认设置为：
+        Flash ： 350MB
+        HTML5
+                · 桌面 ： 150-400MB(取决于全屏尺寸)
+                · 平板电脑/手机 ： 50MB
+                · iOS : 40MB(7.1之前)
+                · iOS : 50MB(7.1及以上)
+                · iPhone 4/4s : 40MB
+]</code></pre>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="tag-icon is-size-6 has-text-grey has-mr-7"></span>
+                    <a class="has-link-grey -link" href="/tags/krpano/" rel="tag">krpano</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <link rel="stylesheet" href="/aPlayer/APlayer.min.css">
+        <div id="aplayer"></div>
+        <script type="text/javascript" src="/aPlayer/APlayer.min.js"></script>
+        <script type="text/javascript" src="/aPlayer/music.js"></script>
+
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/aplay.png" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/weixin.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/01/28/krpano-vtourskin-xml/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">krpano vtourskin.xml</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/28/krpano-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+                <span class="level-item">krpano 常用方法</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'I2UyvCiHHlhs9sUKgM0rHG33-gzGzoHsz',
+        app_key: 'dTA3IBoeBdo5by5kTa9hOocd',
+        placeholder: '给我的文章加点评论吧~'
+    });
+</script>
+
+    </div>
+</div>
+
+
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <!--<img class="" src="/images/kb-mini.png" alt="小黑搞点事">-->
+                        <!--不管了 都用圆角-->
+                        <img class="is-rounded" src="/images/kb-mini.png" alt="小黑搞点事">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        小黑搞点事
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        前端渣渣
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>天府-成都</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            12
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            5
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            11
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/blackKr" target="_blank" rel="noopener">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/blackKr">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Dribbble" href="https://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/blackKr" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">black</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/VR/">
+            <span class="level-start">
+                <span class="level-item">VR</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/web%E5%89%8D%E7%AB%AF/">
+            <span class="level-start">
+                <span class="level-item">web前端</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/weex/">
+            <span class="level-start">
+                <span class="level-item">weex</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E5%91%BD%E4%BB%A4/">
+            <span class="level-start">
+                <span class="level-item">命令</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">
+            <span class="level-start">
+                <span class="level-item">转换工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/cygwin/" style="font-size: 10px;">cygwin</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/krpano/" style="font-size: 20px;">krpano</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tool/" style="font-size: 10px;">tool</a> <a href="/tags/uniapp/" style="font-size: 10px;">uniapp</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:11:42.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">weex打包安卓</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weex/">weex</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:02:32.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">转换工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">转换工具</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:56:14.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-tour-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano tour.xml</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:42:17.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-vtourskin-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano vtourskin.xml</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:26:53.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano 使用教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cygwin/">
+                        <span class="tag">cygwin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript/">
+                        <span class="tag">javascript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/krpano/">
+                        <span class="tag">krpano</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/shell/">
+                        <span class="tag">shell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/svn/">
+                        <span class="tag">svn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tool/">
+                        <span class="tag">tool</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/uniapp/">
+                        <span class="tag">uniapp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vim/">
+                        <span class="tag">vim</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue/">
+                        <span class="tag">vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weex/">
+                        <span class="tag">weex</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:11:42.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">weex打包安卓</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weex/">weex</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:02:32.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">转换工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">转换工具</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:56:14.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-tour-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano tour.xml</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:42:17.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-vtourskin-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano vtourskin.xml</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:26:53.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano 使用教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cygwin/">
+                        <span class="tag">cygwin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript/">
+                        <span class="tag">javascript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/krpano/">
+                        <span class="tag">krpano</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/shell/">
+                        <span class="tag">shell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/svn/">
+                        <span class="tag">svn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tool/">
+                        <span class="tag">tool</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/uniapp/">
+                        <span class="tag">uniapp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vim/">
+                        <span class="tag">vim</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue/">
+                        <span class="tag">vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weex/">
+                        <span class="tag">weex</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="krpano 使用教程" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 black&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/blackKr">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

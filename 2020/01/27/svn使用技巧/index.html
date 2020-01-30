@@ -17,17 +17,19 @@
 <meta property="og:site_name" content="小黑搞点事">
 <meta property="og:description" content="恢复1.恢复一整个目录的文件  svn revert -R .  （ . 代表当前 ）2.丢弃对一个文件的修改：    svn revert foo.c">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/images/svn.png">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-01-27T05:20:23.000Z">
-<meta property="article:modified_time" content="2020-01-27T15:53:19.905Z">
+<meta property="article:modified_time" content="2020-01-28T08:03:51.808Z">
 <meta property="article:author" content="Black">
 <meta property="article:tag" content="svn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/svn.png">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
 
 
+
+<link rel="alternative" href="/atom.xml" title="svn使用技巧" type="application/atom+xml">
 
 
 
@@ -74,7 +76,6 @@
 
 
 <link rel="stylesheet" href="/css/style.css">
-<link rel="alternate" href="/atom.xml" title="小黑搞点事" type="application/atom+xml">
 </head>
 <body class="is-3-column">
 
@@ -140,7 +141,8 @@
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
-    <!--都不显示图片-->
+    
+
     
     <div class="card-content article ">
         
@@ -174,25 +176,25 @@
             
         </h1>
         <div class="content">
-            <h3 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h3><p>1.恢复一整个目录的文件<br>  svn revert -R .  （ . 代表当前 ）<br>2.丢弃对一个文件的修改：<br>    svn revert foo.c</p>
+            <h3><span id="hui-fu">恢复</span><a href="#hui-fu" class="header-anchor">#</a></h3><p>1.恢复一整个目录的文件<br>  svn revert -R .  （ . 代表当前 ）<br>2.丢弃对一个文件的修改：<br>    svn revert foo.c</p>
 <a id="more"></a>
 
-<h3 id="拉分支"><a href="#拉分支" class="headerlink" title="拉分支"></a>拉分支</h3><p>svn cp -r 需要拉到的版本号 -m “pull ios_5.0.0_10969_20171206” svn://116.62.100.209/panda/trunk/client/文件名  svn://116.62.100.209/panda/branches/release/文件名_版本_版本号_时间（例：ios_5.0.0_10969_20171206）</p>
-<h3 id="合并版本-需-cd-到-当前分支"><a href="#合并版本-需-cd-到-当前分支" class="headerlink" title="合并版本(需 cd 到 当前分支)"></a>合并版本(需 cd 到 当前分支)</h3><p>svn merge -c 需要合并的版本号 svn://116.62.100.209/panda/trunk/client/文件名 .   （ . 代表 当前路径 ）<br>提交：merge from 版本号 trunk</p>
+<h3><span id="la-fen-zhi">拉分支</span><a href="#la-fen-zhi" class="header-anchor">#</a></h3><p>svn cp -r 需要拉到的版本号 -m “pull ios_5.0.0_10969_20171206” svn://116.62.100.209/panda/trunk/client/文件名  svn://116.62.100.209/panda/branches/release/文件名_版本_版本号_时间（例：ios_5.0.0_10969_20171206）</p>
+<h3><span id="he-bing-ban-ben-xu-cd-dao-dang-qian-fen-zhi">合并版本(需 cd 到 当前分支)</span><a href="#he-bing-ban-ben-xu-cd-dao-dang-qian-fen-zhi" class="header-anchor">#</a></h3><p>svn merge -c 需要合并的版本号 svn://116.62.100.209/panda/trunk/client/文件名 .   （ . 代表 当前路径 ）<br>提交：merge from 版本号 trunk</p>
 <p>反向合并：svn merge -c -需要合并的版本号 svn://116.62.100.209/panda/trunk/client/文件名 .   （ . 代表 当前路径 ）</p>
-<h3 id="解决合并后的冲突"><a href="#解决合并后的冲突" class="headerlink" title="解决合并后的冲突"></a>解决合并后的冲突</h3><p>svn resolved path  （ 已过时 ）<br>svn resolved –accept mine-full path （ 1.5版本后，加上–accept参数，尝试自动处理冲突 ）</p>
-<h3 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h3><p>svn add 文件名称<br>svn add *.js   （添加所有 .js 文件）</p>
-<h3 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h3><p>svn ci -m’注释信息’ path<br>svn ci -m’注释信息’   ( 提交所有改动的代码 ) ( 可以不写注释 )</p>
-<h3 id="更新到指定版本"><a href="#更新到指定版本" class="headerlink" title="更新到指定版本"></a>更新到指定版本</h3><p>svn up -r 版本号 path （ 将指定文件还原到指定的版本号 ）</p>
-<h3 id="查看文件或者目录状态"><a href="#查看文件或者目录状态" class="headerlink" title="查看文件或者目录状态"></a>查看文件或者目录状态</h3><p>svn st -v path  （ 查看文件或者目录状态 最后 ）</p>
-<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><p>svn rm -m’注释’ path</p>
-<h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><p>svn log path</p>
-<h3 id="查看文件详细信息"><a href="#查看文件详细信息" class="headerlink" title="查看文件详细信息"></a>查看文件详细信息</h3><p>svn info path </p>
-<h3 id="比较差异"><a href="#比较差异" class="headerlink" title="比较差异"></a>比较差异</h3><p>svn diff -r m:n path ( 比较 指定文件夹 m 和 n 版本的差异 )</p>
-<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><p>cat path</p>
-<h3 id="修改文件内容"><a href="#修改文件内容" class="headerlink" title="修改文件内容"></a>修改文件内容</h3><p>vi path</p>
-<h3 id="更改文件名称"><a href="#更改文件名称" class="headerlink" title="更改文件名称"></a>更改文件名称</h3><p>svn move old_path_name new_path_name</p>
-<h3 id="常见状态"><a href="#常见状态" class="headerlink" title="常见状态"></a>常见状态</h3><font color=#ff5400>
+<h3><span id="jie-jue-he-bing-hou-de-chong-tu">解决合并后的冲突</span><a href="#jie-jue-he-bing-hou-de-chong-tu" class="header-anchor">#</a></h3><p>svn resolved path  （ 已过时 ）<br>svn resolved –accept mine-full path （ 1.5版本后，加上–accept参数，尝试自动处理冲突 ）</p>
+<h3><span id="tian-jia-wen-jian">添加文件</span><a href="#tian-jia-wen-jian" class="header-anchor">#</a></h3><p>svn add 文件名称<br>svn add *.js   （添加所有 .js 文件）</p>
+<h3><span id="ti-jiao-dai-ma">提交代码</span><a href="#ti-jiao-dai-ma" class="header-anchor">#</a></h3><p>svn ci -m’注释信息’ path<br>svn ci -m’注释信息’   ( 提交所有改动的代码 ) ( 可以不写注释 )</p>
+<h3><span id="geng-xin-dao-zhi-ding-ban-ben">更新到指定版本</span><a href="#geng-xin-dao-zhi-ding-ban-ben" class="header-anchor">#</a></h3><p>svn up -r 版本号 path （ 将指定文件还原到指定的版本号 ）</p>
+<h3><span id="cha-kan-wen-jian-huo-zhe-mu-lu-zhuang-tai">查看文件或者目录状态</span><a href="#cha-kan-wen-jian-huo-zhe-mu-lu-zhuang-tai" class="header-anchor">#</a></h3><p>svn st -v path  （ 查看文件或者目录状态 最后 ）</p>
+<h3><span id="shan-chu-wen-jian">删除文件</span><a href="#shan-chu-wen-jian" class="header-anchor">#</a></h3><p>svn rm -m’注释’ path</p>
+<h3><span id="cha-kan-ri-zhi">查看日志</span><a href="#cha-kan-ri-zhi" class="header-anchor">#</a></h3><p>svn log path</p>
+<h3><span id="cha-kan-wen-jian-xiang-xi-xin-xi">查看文件详细信息</span><a href="#cha-kan-wen-jian-xiang-xi-xin-xi" class="header-anchor">#</a></h3><p>svn info path </p>
+<h3><span id="bi-jiao-chai-yi">比较差异</span><a href="#bi-jiao-chai-yi" class="header-anchor">#</a></h3><p>svn diff -r m:n path ( 比较 指定文件夹 m 和 n 版本的差异 )</p>
+<h3><span id="cha-kan-wen-jian-nei-rong">查看文件内容</span><a href="#cha-kan-wen-jian-nei-rong" class="header-anchor">#</a></h3><p>cat path</p>
+<h3><span id="xiu-gai-wen-jian-nei-rong">修改文件内容</span><a href="#xiu-gai-wen-jian-nei-rong" class="header-anchor">#</a></h3><p>vi path</p>
+<h3><span id="geng-gai-wen-jian-ming-cheng">更改文件名称</span><a href="#geng-gai-wen-jian-ming-cheng" class="header-anchor">#</a></h3><p>svn move old_path_name new_path_name</p>
+<h3><span id="chang-jian-zhuang-tai">常见状态</span><a href="#chang-jian-zhuang-tai" class="header-anchor">#</a></h3><font color="#ff5400">
 
 <pre><code>&quot;&quot;  没有修改
 
@@ -213,8 +215,8 @@
 &apos;!&apos;  丢失，一般是将受控文件直接删除导致</code></pre></font>
 
 
-<h3 id="设置忽略文件"><a href="#设置忽略文件" class="headerlink" title="设置忽略文件"></a>设置忽略文件</h3><p>export SVN_EDITOR=vim<br>svn propedit svn:ignore 需要设置忽略的文件/文件夹   此时在vim中 输入需要忽略的文件夹名称即可</p>
-<h3 id="查看最近几条日志"><a href="#查看最近几条日志" class="headerlink" title="查看最近几条日志"></a>查看最近几条日志</h3><p>svn log -l 10     (查看最近10条日志 l 是小写的 L)</p>
+<h3><span id="she-zhi-hu-lue-wen-jian">设置忽略文件</span><a href="#she-zhi-hu-lue-wen-jian" class="header-anchor">#</a></h3><p>export SVN_EDITOR=vim<br>svn propedit svn:ignore 需要设置忽略的文件/文件夹   此时在vim中 输入需要忽略的文件夹名称即可</p>
+<h3><span id="cha-kan-zui-jin-ji-tiao-ri-zhi">查看最近几条日志</span><a href="#cha-kan-zui-jin-ji-tiao-ri-zhi" class="header-anchor">#</a></h3><p>svn log -l 10     (查看最近10条日志 l 是小写的 L)</p>
 
         </div>
         
@@ -228,6 +230,10 @@
         </div>
         
         
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
         
     </div>
 </div>
@@ -293,269 +299,28 @@
 
 
 
-
-
-<style>
-    .valine-card {
-        margin: 1.5rem auto;
-    }
-
-    .valine-card .card-content {
-        padding: 20px 20px 5px 20px;
-    }
-
-    #vcomments textarea {
-        box-sizing: border-box;
-        background: url("") 100% 100% no-repeat;
-    }
-
-    #vcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #vcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #vcomments a {
-        padding: 0 2px;
-        color: #4cbf30;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    #vcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #vcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #vcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #vcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #vcomments ul li {
-        list-style-type: disc;
-    }
-
-    #vcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #vcomments table, th, td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #vcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #vcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #vcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #vcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #vcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #vcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #vcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #vcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #vcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #vcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #vcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #vcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #vcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #vcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #vcomments dfn {
-        font-style: italic;
-    }
-
-    #vcomments small {
-        font-size: 85%;
-    }
-
-    #vcomments cite {
-        font-style: normal;
-    }
-
-    #vcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-</style>
-
-<div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="vcomments" class="card-content" style="display: grid">
-    </div>
-</div>
-
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
 <script>
     new Valine({
-        el: '#vcomments',
-        appId: 'I2UyvCiHHlhs9sUKgM0rHG33-gzGzoHsz',
-        appKey: 'dTA3IBoeBdo5by5kTa9hOocd',
-        notify: '' === 'true',
-        verify: 'false' === 'true',
-        visitor: '' === 'true',
-        avatar: 'mp',
-        pageSize: '',
-        lang: 'zh-cn',
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'I2UyvCiHHlhs9sUKgM0rHG33-gzGzoHsz',
+        app_key: 'dTA3IBoeBdo5by5kTa9hOocd',
         placeholder: '给我的文章加点评论吧~'
     });
 </script>
+
+    </div>
+</div>
+
+
 
 
 </div>
@@ -605,7 +370,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            5
+                            12
                         </p>
                     </a>
                 </div>
@@ -617,7 +382,7 @@
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
-                            2
+                            5
                         </p>
                     </a>
                 </div>
@@ -629,7 +394,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            8
+                            11
                         </p>
                     </a>
                 </div>
@@ -637,7 +402,7 @@
         </nav>
         
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+            <a class="level-item button is-link is-rounded" href="https://github.com/blackKr" target="_blank" rel="noopener">
                 关注我</a>
         </div>
         
@@ -646,7 +411,7 @@
         <div class="level is-mobile">
             
             <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
-                title="Github" href="https://github.com/ppoffice">
+                title="Github" href="https://github.com/blackKr">
                 
                 <i class="fab fa-github"></i>
                 
@@ -686,8 +451,6 @@
 </div>
 
     
-        
-    
         <div class="card widget">
     <div class="card-content">
         <div class="menu">
@@ -708,9 +471,9 @@
             </li>
         
             <li>
-                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+                <a class="level is-mobile" href="https://github.com/blackKr" target="_blank" rel="noopener">
                     <span class="level-left">
-                        <span class="level-item">PPOffice</span>
+                        <span class="level-item">black</span>
                     </span>
                     <span class="level-right">
                         <span class="level-item tag">github.com</span>
@@ -733,12 +496,28 @@
             </h3>
             <ul class="menu-list">
             <li>
+        <a class="level is-marginless" href="/categories/VR/">
+            <span class="level-start">
+                <span class="level-item">VR</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/web%E5%89%8D%E7%AB%AF/">
             <span class="level-start">
                 <span class="level-item">web前端</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/weex/">
+            <span class="level-start">
+                <span class="level-item">weex</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%E5%91%BD%E4%BB%A4/">
@@ -747,6 +526,14 @@
             </span>
             <span class="level-end">
                 <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">
+            <span class="level-start">
+                <span class="level-item">转换工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li>
             </ul>
@@ -759,12 +546,14 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/cygwin/" style="font-size: 10px;">cygwin</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/uniapp/" style="font-size: 10px;">uniapp</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a>
+        <a href="/tags/cygwin/" style="font-size: 10px;">cygwin</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/krpano/" style="font-size: 20px;">krpano</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tool/" style="font-size: 10px;">tool</a> <a href="/tags/uniapp/" style="font-size: 10px;">uniapp</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
     </div>
 </div>
     
     
         <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
         
             <div class="card widget">
     <div class="card-content">
@@ -774,18 +563,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/uniapp.png" alt="uniapp兼容问题">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T15:15:02.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">uniapp兼容问题</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:11:42.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">weex打包安卓</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        <a class="has-link-grey -link" href="/categories/weex/">weex</a>
                     </p>
                 </div>
             </div>
@@ -793,18 +576,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/shell.png" alt="命令工具">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T09:34:48.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">命令工具</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:02:32.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">转换工具</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">转换工具</a>
                     </p>
                 </div>
             </div>
@@ -812,18 +589,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/js.png" alt="js常见问题">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T09:08:33.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">js常见问题</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:56:14.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-tour-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano tour.xml</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -831,18 +602,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/svn.png" alt="svn使用技巧">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T05:20:23.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">svn使用技巧</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:42:17.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-vtourskin-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano vtourskin.xml</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -850,18 +615,12 @@
         
         <article class="media">
             
-            <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/hexo.png" alt="Hexo 操作指南">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T22:08:33.000Z">2019-12-20</time></div>
-                    <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 操作指南</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:26:53.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano 使用教程</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -884,7 +643,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -935,6 +694,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/krpano/">
+                        <span class="tag">krpano</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/shell/">
                         <span class="tag">shell</span>
                         <span class="tag is-grey">1</span>
@@ -944,6 +710,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/svn/">
                         <span class="tag">svn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tool/">
+                        <span class="tag">tool</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -965,6 +738,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/vue/">
                         <span class="tag">vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weex/">
+                        <span class="tag">weex</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -977,6 +757,7 @@
         </div>
     
 </div>
+
 
                 
 
@@ -985,6 +766,8 @@
 
 <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
+        
+    
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
@@ -993,18 +776,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/uniapp.png" alt="uniapp兼容问题">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T15:15:02.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">uniapp兼容问题</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:11:42.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">weex打包安卓</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        <a class="has-link-grey -link" href="/categories/weex/">weex</a>
                     </p>
                 </div>
             </div>
@@ -1012,18 +789,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/shell.png" alt="命令工具">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T09:34:48.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">命令工具</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:02:32.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">转换工具</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">转换工具</a>
                     </p>
                 </div>
             </div>
@@ -1031,18 +802,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/js.png" alt="js常见问题">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T09:08:33.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">js常见问题</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:56:14.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-tour-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano tour.xml</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -1050,18 +815,12 @@
         
         <article class="media">
             
-            <a href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/svn.png" alt="svn使用技巧">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T05:20:23.000Z">2020-01-27</time></div>
-                    <a href="/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">svn使用技巧</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:42:17.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-vtourskin-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano vtourskin.xml</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -1069,18 +828,12 @@
         
         <article class="media">
             
-            <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/hexo.png" alt="Hexo 操作指南">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T22:08:33.000Z">2019-12-20</time></div>
-                    <a href="/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 操作指南</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:26:53.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano 使用教程</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%91%BD%E4%BB%A4/">命令</a>
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
                     </p>
                 </div>
             </div>
@@ -1103,7 +856,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -1154,6 +907,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/krpano/">
+                        <span class="tag">krpano</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/shell/">
                         <span class="tag">shell</span>
                         <span class="tag is-grey">1</span>
@@ -1163,6 +923,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/svn/">
                         <span class="tag">svn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tool/">
+                        <span class="tag">tool</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1184,6 +951,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/vue/">
                         <span class="tag">vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weex/">
+                        <span class="tag">weex</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1195,6 +969,7 @@
     
     
 </div>
+
 
             </div>
         </div>

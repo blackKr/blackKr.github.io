@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-27T15:53:19.895Z</updated>
+  <updated>2020-01-28T09:20:38.055Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,190 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>weex打包安卓</title>
+    <link href="http://yoursite.com/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/"/>
+    <id>http://yoursite.com/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/</id>
+    <published>2020-01-28T09:11:42.000Z</published>
+    <updated>2020-01-28T09:20:38.055Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;常用技巧&quot;&gt;&lt;a href=&quot;#常用技巧&quot; class=&quot;headerlink&quot; title=&quot;常用技巧&quot;&gt;&lt;/a&gt;常用技巧&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="weex" scheme="http://yoursite.com/categories/weex/"/>
+    
+    
+      <category term="weex" scheme="http://yoursite.com/tags/weex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>转换工具</title>
+    <link href="http://yoursite.com/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/"/>
+    <id>http://yoursite.com/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/</id>
+    <published>2020-01-28T09:02:32.000Z</published>
+    <updated>2020-01-28T09:21:49.150Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;js，css兼容处理&quot;&gt;&lt;a href=&quot;#js，css兼容处理&quot; class=&quot;headerlink&quot; title=&quot;js，css兼容处理&quot;&gt;&lt;/a&gt;js，css兼容处理&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Autoprefixer css online
+https://autoprefixer.github.io/
+css 在线增加浏览器兼容性
+
+
+https://babeljs.io/repl/
+es6转es5
+
+多端代码统一：
+tora，uniapp&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="转换工具" scheme="http://yoursite.com/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="tool" scheme="http://yoursite.com/tags/tool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>krpano tour.xml</title>
+    <link href="http://yoursite.com/2020/01/28/krpano-tour-xml/"/>
+    <id>http://yoursite.com/2020/01/28/krpano-tour-xml/</id>
+    <published>2020-01-28T08:56:14.000Z</published>
+    <updated>2020-01-28T09:00:30.767Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;点击下载&lt;/code&gt;  &lt;a href=&quot;https://github.com/blackKr/source/blob/master/krpano/tour.xml&quot;&gt;tour.xml&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VR" scheme="http://yoursite.com/categories/VR/"/>
+    
+    
+      <category term="krpano" scheme="http://yoursite.com/tags/krpano/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>krpano vtourskin.xml</title>
+    <link href="http://yoursite.com/2020/01/28/krpano-vtourskin-xml/"/>
+    <id>http://yoursite.com/2020/01/28/krpano-vtourskin-xml/</id>
+    <published>2020-01-28T08:42:17.000Z</published>
+    <updated>2020-01-28T08:55:24.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;点击下载&lt;/code&gt;  &lt;a href=&quot;https://github.com/blackKr/source/blob/master/krpano/vtourskin.xml&quot;&gt;vtourskin.xml&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VR" scheme="http://yoursite.com/categories/VR/"/>
+    
+    
+      <category term="krpano" scheme="http://yoursite.com/tags/krpano/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>krpano 使用教程</title>
+    <link href="http://yoursite.com/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://yoursite.com/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+    <published>2020-01-28T08:26:53.000Z</published>
+    <updated>2020-01-28T08:41:36.126Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;全局可以使用的一些值&quot;&gt;&lt;a href=&quot;#全局可以使用的一些值&quot; class=&quot;headerlink&quot; title=&quot;全局可以使用的一些值&quot;&gt;&lt;/a&gt;&lt;em&gt;&lt;strong&gt;全局可以使用的一些值&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;场景scene：
+scene[name].content
+scene.count
+scene[name].index
+scene.onstart
+
+陀螺仪事件：
+&amp;lt;plugin name=&amp;quot;gyro&amp;quot;  /&amp;gt; name值就是一会调用的key
+onavailable:   在支持陀螺仪的设备上调用
+onunavailable：在不支持陀螺仪的设备上调用
+onenable： 在陀螺仪启用的时候调用
+ondisable： 在陀螺仪禁用的时候调用&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="VR" scheme="http://yoursite.com/categories/VR/"/>
+    
+    
+      <category term="krpano" scheme="http://yoursite.com/tags/krpano/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>krpano 常用方法</title>
+    <link href="http://yoursite.com/2020/01/28/krpano-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2020/01/28/krpano-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</id>
+    <published>2020-01-28T08:09:43.000Z</published>
+    <updated>2020-01-28T08:25:39.342Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;&lt;strong&gt;xml中使用&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;绑定js方法：js(js方法名(参数))
+
+获取经纬度：get(view.hlookat),get(view.vlookat)
+
+鼠标点击位置：get(mouse.x), get(mouse.y)
+
+获取当前场景name：get(scene[get(xml.scene)].name)
+
+获取当前场景索引：get(scene[get(xml.scene)].index)
+
+获取缩放的值：get(view.fov)&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="VR" scheme="http://yoursite.com/categories/VR/"/>
+    
+    
+      <category term="krpano" scheme="http://yoursite.com/tags/krpano/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue js转ts文档 cl2.0</title>
+    <link href="http://yoursite.com/2020/01/28/vue-js%E8%BD%ACts%E6%96%87%E6%A1%A3-cl2-0/"/>
+    <id>http://yoursite.com/2020/01/28/vue-js%E8%BD%ACts%E6%96%87%E6%A1%A3-cl2-0/</id>
+    <published>2020-01-28T07:14:48.000Z</published>
+    <updated>2020-01-28T08:04:00.648Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;em&gt;第一步&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install babel-plugin-transform-decorators-legacy --save-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="web前端" scheme="http://yoursite.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>uniapp兼容问题</title>
     <link href="http://yoursite.com/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2020/01/27/uniapp%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</id>
     <published>2020-01-27T15:15:02.000Z</published>
-    <updated>2020-01-27T15:53:19.895Z</updated>
+    <updated>2020-01-28T08:03:51.792Z</updated>
     
     <summary type="html">
     
@@ -33,9 +212,9 @@
       <category term="web前端" scheme="http://yoursite.com/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="uniapp" scheme="http://yoursite.com/tags/uniapp/"/>
-    
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+      <category term="uniapp" scheme="http://yoursite.com/tags/uniapp/"/>
     
   </entry>
   
@@ -44,7 +223,7 @@
     <link href="http://yoursite.com/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
     <id>http://yoursite.com/2020/01/27/%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
     <published>2020-01-27T09:34:48.000Z</published>
-    <updated>2020-01-27T15:53:19.886Z</updated>
+    <updated>2020-01-28T08:03:51.781Z</updated>
     
     <summary type="html">
     
@@ -71,7 +250,7 @@
     <link href="http://yoursite.com/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2020/01/27/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</id>
     <published>2020-01-27T09:08:33.000Z</published>
-    <updated>2020-01-27T15:53:19.915Z</updated>
+    <updated>2020-01-28T08:03:51.818Z</updated>
     
     <summary type="html">
     
@@ -94,7 +273,7 @@
     <link href="http://yoursite.com/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     <id>http://yoursite.com/2020/01/27/svn%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</id>
     <published>2020-01-27T05:20:23.000Z</published>
-    <updated>2020-01-27T15:53:19.905Z</updated>
+    <updated>2020-01-28T08:03:51.808Z</updated>
     
     <summary type="html">
     
@@ -115,7 +294,7 @@
     <link href="http://yoursite.com/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/"/>
     <id>http://yoursite.com/2019/12/20/hexo%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</id>
     <published>2019-12-19T22:08:33.000Z</published>
-    <updated>2020-01-27T15:52:56.692Z</updated>
+    <updated>2020-01-28T08:10:05.655Z</updated>
     
     <summary type="html">
     

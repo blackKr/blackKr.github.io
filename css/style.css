@@ -4,6 +4,11 @@
   src: url("remixicon/remixicon.eot?t=1572787439022#iefix") format('embedded-opentype'), url("remixicon/remixicon.woff2?t=1572787439022") format("woff2"), url("remixicon/remixicon.woff?t=1572787439022") format("woff"), url("remixicon/remixicon.ttf?t=1572787439022") format('truetype'), url("remixicon/remixicon.svg?t=1572787439022#remixicon") format('svg'); /* iOS 4.1- */
   font-display: swap;
 }
+@font-face {
+  font-family: "albbicon";
+  src: url("albbicon/iconfont.eot?t=1580193077957"); /* IE9 */
+  src: url("albbicon/iconfont.eot?t=1580193077957#iefix") format('embedded-opentype'), url("albbicon/iconfont.woff?t=1580193077957") format('woff'), url("albbicon/iconfont.ttf?t=1580193077957") format('truetype'), url("albbicon/iconfont.svg?t=1580193077957#iconfont") format('svg'); /* iOS 4.1- */
+}
 /* ---------------------------------
  *       Override CSS Framework
  * --------------------------------- */
@@ -345,10 +350,10 @@ img.thumbnail {
 .has-link-grey {
   color: #7a7a7a !important;
 }
-.level-item .tag-icon {
+.level-start .level-item .tag-icon {
   position: relative;
 }
-.level-item .tag-icon:before {
+.level-start .level-item .tag-icon:before {
   color: #5d5a5a;
   content: "\eec3";
   font-family: remixicon;
@@ -356,7 +361,7 @@ img.thumbnail {
   position: relative;
   top: 2px;
 }
-.level-item .has-link-grey {
+.level-start .level-item .has-link-grey {
   color: #fff !important;
   font-size: 11px;
   text-decoration: none;
@@ -575,4 +580,41 @@ figure.highlight .section {
 }
 #aplayer .aplayer-body {
   position: relative;
+}
+.zhi-ding {
+  position: absolute;
+  font-family: albbicon;
+  font-size: 22px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  right: 10px;
+  top: 10px;
+}
+.zhi-ding:before {
+  content: "\e503";
+  color: #ff5400;
+}
+.zhi-ding-list {
+  font-family: albbicon;
+  font-size: 18px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 1rem;
+}
+.zhi-ding-list:before {
+  content: "\e611";
+  color: #999;
+}
+.list-look-more {
+  font-family: albbicon;
+  font-size: 40px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.list-look-more:after {
+  content: "\e61c";
+  margin-left: 2px;
 }

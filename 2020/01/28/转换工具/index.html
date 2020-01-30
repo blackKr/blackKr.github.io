@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>转换工具 - 小黑搞点事</title>
+
+
+    <meta name="description" content="js，css兼容处理Autoprefixer css online https:&#x2F;&#x2F;autoprefixer.github.io&#x2F; css 在线增加浏览器兼容性   https:&#x2F;&#x2F;babeljs.io&#x2F;repl&#x2F; es6转es5  多端代码统一： tora，uniapp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="转换工具">
+<meta property="og:url" content="http://yoursite.com/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/index.html">
+<meta property="og:site_name" content="小黑搞点事">
+<meta property="og:description" content="js，css兼容处理Autoprefixer css online https:&#x2F;&#x2F;autoprefixer.github.io&#x2F; css 在线增加浏览器兼容性   https:&#x2F;&#x2F;babeljs.io&#x2F;repl&#x2F; es6转es5  多端代码统一： tora，uniapp">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="article:published_time" content="2020-01-28T09:02:32.000Z">
+<meta property="article:modified_time" content="2020-01-28T09:21:49.150Z">
+<meta property="article:author" content="Black">
+<meta property="article:tag" content="tool">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="转换工具" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+
+    <!-- 插入音乐 -->
+    <!--<link rel="stylesheet" href="/aPlayer/APlayer.min.css">-->
+    <!--<div id="aplayer" ></div>-->
+    <!--<script type="text/javascript" src="/aPlayer/APlayer.min.js"></script>-->
+    <!--<script type="text/javascript" src="/aPlayer/music.js"></script>-->
+
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="转换工具" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">首页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归类</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/blackKr">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-28T09:02:32.000Z">2020-01-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">转换工具</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    18 分钟 读完 (大约 2765 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                转换工具
+            
+        </h1>
+        <div class="content">
+            <h2><span id="js-css-jian-rong-chu-li">js，css兼容处理</span><a href="#js-css-jian-rong-chu-li" class="header-anchor">#</a></h2><pre><code>Autoprefixer css online
+https://autoprefixer.github.io/
+css 在线增加浏览器兼容性
+
+
+https://babeljs.io/repl/
+es6转es5
+
+多端代码统一：
+tora，uniapp</code></pre><a id="more"></a>    
+
+
+<h2><span id="fu-wen-ben-bian-ji-qi">富文本编辑器</span><a href="#fu-wen-ben-bian-ji-qi" class="header-anchor">#</a></h2><pre><code>wangeditor </code></pre><h2><span id="cdn-zi-yuan-qian-zhui">CDN资源前缀</span><a href="#cdn-zi-yuan-qian-zhui" class="header-anchor">#</a></h2><pre><code>https://cdn.jsdelivr.net/
+
+例如： https://cdn.jsdelivr.net/npm/pdfjs-dist@2.1.266/build/pdf.worker.js    </code></pre><h2><span id="chang-yong-wang-zhan">常用网站</span><a href="#chang-yong-wang-zhan" class="header-anchor">#</a></h2><pre><code>www.bootcss.com
+
+nec.netease.com
+
+常用火狐API网站
+https://developer.mozilla.org/zh-CN/    </code></pre><h2><span id="chang-yong-bian-ji-qi">常用编辑器</span><a href="#chang-yong-bian-ji-qi" class="header-anchor">#</a></h2><p><code>点击下载</code>  <a href="https://github.com/blackKr/source/testingserver.exe">testingserver</a></p>
+<pre><code>文本编辑器：
+EmEditor   Notepad++
+
+监听：
+Fiddler4
+
+testingserver.exe 这个软件放在任意目录，点击运行，就可以部署个静态的服务器    </code></pre><h2><span id="js-zi-fu-chuan-zhuan-fang-fa">js 字符串转方法</span><a href="#js-zi-fu-chuan-zhuan-fang-fa" class="header-anchor">#</a></h2><pre><code>1. 通过字符串 找方法:
+var func=eval(functionName);
+//创建函数对象，并调用
+new func(参数);
+
+2. 正则表达式：
+http://deerchao.net/tutorials/regex/regex-1.htm</code></pre><h2><span id="babel-ru-men-jiao-cheng">Babel 入门教程__</span><a href="#babel-ru-men-jiao-cheng" class="header-anchor">#</a></h2><pre><code>来自： http://web.jobbole.cm/85115/
+
+（说明：本文选自我的新书 《ES6 标准入门（第二版）》 的第一章 《ECMAScript 6简介》 ）
+
+Babel 是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。
+
+
+
+这意味着，你可以现在就用ES6编写程序，而不用担心现有环境是否支持。下面是一个例子。
+
+// 转码前
+input.map(item =&gt; item + 1);
+
+// 转码后
+input.map(function (item) {
+  return item + 1;
+});
+// 转码前
+input.map(item =&gt; item + 1);
+
+// 转码后
+input.map(function (item) {
+  return item + 1;
+});
+上面的原始代码用了箭头函数，这个特性还没有得到广泛支持，Babel将其转为普通函数，就能在现有的JavaScript环境执行了。
+
+一、配置文件 .babelrc
+Babel的配置文件是 .babelrc ，存放在项目的根目录下。使用Babel的第一步，就是配置这个文件。
+
+该文件用来设置转码规则和插件，基本格式如下。
+
+{
+  &quot;presets&quot;: [],
+  &quot;plugins&quot;: []
+}
+{
+  &quot;presets&quot;: [],
+  &quot;plugins&quot;: []
+}
+presets 字段设定转码规则，官方提供以下的规则集，你可以根据需要安装。
+
+# ES2015转码规则
+$ npm install --save-dev babel-preset-es2015
+
+# react转码规则
+$ npm install --save-dev babel-preset-react
+
+# ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个
+$ npm install --save-dev babel-preset-stage-0
+$ npm install --save-dev babel-preset-stage-1
+$ npm install --save-dev babel-preset-stage-2
+$ npm install --save-dev babel-preset-stage-3
+# ES2015转码规则
+$ npminstall --save-devbabel-preset-es2015
+
+# react转码规则
+$ npminstall --save-devbabel-preset-react
+
+# ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个
+$ npminstall --save-devbabel-preset-stage-0
+$ npminstall --save-devbabel-preset-stage-1
+$ npminstall --save-devbabel-preset-stage-2
+$ npminstall --save-devbabel-preset-stage-3
+然后，将这些规则加入 .babelrc 。
+
+{
+    &quot;presets&quot;: [
+      &quot;es2015&quot;,
+      &quot;react&quot;,
+      &quot;stage-2&quot;
+    ],
+    &quot;plugins&quot;: []
+  }
+  {
+    &quot;presets&quot;: [
+      &quot;es2015&quot;,
+      &quot;react&quot;,
+      &quot;stage-2&quot;
+    ],
+    &quot;plugins&quot;: []
+  }
+注意，以下所有Babel工具和模块的使用，都必须先写好 .babelrc 。
+
+二、命令行转码 babel-cli
+Babel提供 babel-cli 工具，用于命令行转码。
+
+它的安装命令如下。
+
+$ npm install --global babel-cli
+$ npminstall --global babel-cli
+基本用法如下。
+
+# 转码结果输出到标准输出
+$ babel example.js
+
+# 转码结果写入一个文件
+# --out-file 或 -o 参数指定输出文件
+$ babel example.js --out-file compiled.js
+# 或者
+$ babel example.js -o compiled.js
+
+# 整个目录转码
+# --out-dir 或 -d 参数指定输出目录
+$ babel src --out-dir lib
+# 或者
+$ babel src -d lib
+
+# -s 参数生成source map文件
+$ babel src -d lib -s
+# 转码结果输出到标准输出
+$ babelexample.js
+
+# 转码结果写入一个文件
+# --out-file 或 -o 参数指定输出文件
+$ babelexample.js --out-filecompiled.js
+# 或者
+$ babelexample.js -o compiled.js
+
+# 整个目录转码
+# --out-dir 或 -d 参数指定输出目录
+$ babelsrc --out-dirlib
+# 或者
+$ babelsrc -d lib
+
+# -s 参数生成source map文件
+$ babelsrc -d lib -s
+上面代码是在全局环境下，进行Babel转码。这意味着，如果项目要运行，全局环境必须有Babel，也就是说项目产生了对环境的依赖。另一方面，这样做也无法支持不同项目使用不同版本的Babel。
+
+一个解决办法是将 babel-cli 安装在项目之中。
+
+# 安装
+$ npm install --save-dev babel-cli
+# 安装
+$ npminstall --save-devbabel-cli
+然后，改写 package.json 。
+
+{
+  // ...
+  &quot;devDependencies&quot;: {
+    &quot;babel-cli&quot;: &quot;^6.0.0&quot;
+  },
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;babel src -d lib&quot;
+  },
+}
+{
+  // ...
+  &quot;devDependencies&quot;: {
+    &quot;babel-cli&quot;: &quot;^6.0.0&quot;
+  },
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;babel src -d lib&quot;
+  },
+}
+转码的时候，就执行下面的命令。
+
+$ npm run build
+$ npmrunbuild
+三、babel-node
+babel-cli 工具自带一个 babel-node 命令，提供一个支持ES6的REPL环境。它支持Node的REPL环境的所有功能，而且可以直接运行ES6代码。
+
+它不用单独安装，而是随 babel-cli 一起安装。然后，执行 babel-node 就进入PEPL环境。
+
+$ babel-node
+&gt; (x =&gt; x * 2)(1)
+2
+$ babel-node
+&gt; (x =&gt; x * 2)(1)
+2
+babel-node 命令可以直接运行ES6脚本。将上面的代码放入脚本文件 es6.js ，然后直接运行。
+
+$ babel-node es6.js
+
+2
+$ babel-nodees6.js
+2
+babel-node 也可以安装在项目中。
+
+$ npm install --save-dev babel-cli
+$ npminstall --save-devbabel-cli
+然后，改写 package.json 。
+
+{
+  &quot;scripts&quot;: {
+    &quot;script-name&quot;: &quot;babel-node script.js&quot;
+  }
+}
+{
+  &quot;scripts&quot;: {
+    &quot;script-name&quot;: &quot;babel-node script.js&quot;
+  }
+}
+上面代码中，使用 babel-node 替代 node ，这样 script.js 本身就不用做任何转码处理。
+
+四、babel-register
+babel-register 模块改写 require 命令，为它加上一个钩子。此后，每当使用 require 加载 .js 、 .jsx 、 .es 和 .es6 后缀名的文件，就会先用Babel进行转码。
+
+$ npm install --save-dev babel-register
+$ npminstall --save-devbabel-register
+使用时，必须首先加载 babel-register 。
+
+require(&quot;babel-register&quot;);
+require(&quot;./index.js&quot;);
+require(&quot;babel-register&quot;);
+require(&quot;./index.js&quot;);
+然后，就不需要手动对 index.js 转码了。
+
+需要注意的是， babel-register 只会对 require 命令加载的文件转码，而不会对当前文件转码。另外，由于它是实时转码，所以只适合在开发环境使用。
+
+五、babel-core
+如果某些代码需要调用Babel的API进行转码，就要使用 babel-core 模块。
+
+安装命令如下。
+
+$ npm install babel-core --save
+$ npminstallbabel-core --save
+然后，在项目中就可以调用 babel-core 。
+
+var babel = require(&apos;babel-core&apos;);
+
+// 字符串转码
+babel.transform(&apos;code();&apos;, options);
+// =&gt; { code, map, ast }
+
+// 文件转码（异步）
+babel.transformFile(&apos;filename.js&apos;, options, function(err, result) {
+  result; // =&gt; { code, map, ast }
+});
+
+// 文件转码（同步）
+babel.transformFileSync(&apos;filename.js&apos;, options);
+// =&gt; { code, map, ast }
+
+// Babel AST转码
+babel.transformFromAst(ast, code, options);
+// =&gt; { code, map, ast }
+var babel = require(&apos;babel-core&apos;);
+
+// 字符串转码
+babel.transform(&apos;code();&apos;, options);
+// =&gt; { code, map, ast }
+
+// 文件转码（异步）
+babel.transformFile(&apos;filename.js&apos;, options, function(err, result) {
+  result; // =&gt; { code, map, ast }
+});
+
+// 文件转码（同步）
+babel.transformFileSync(&apos;filename.js&apos;, options);
+// =&gt; { code, map, ast }
+
+// Babel AST转码
+babel.transformFromAst(ast, code, options);
+// =&gt; { code, map, ast }
+配置对象 options ，可以参看官方文档 http://babeljs.io/docs/usage/options/ 。
+
+下面是一个例子。
+
+var es5Code = &apos;let x = n =&gt; n + 1&apos;;
+var es6Code = require(&apos;babel-core&apos;)
+  .transform(es5Code, {
+    presets: [&apos;es2015&apos;]
+  })
+  .code;
+// &apos;&quot;use strict&quot;;nnvar x = function x(n) {n  return n + 1;n};&apos;
+var es5Code = &apos;let x = n =&gt; n + 1&apos;;
+var es6Code = require(&apos;babel-core&apos;)
+  .transform(es5Code, {
+    presets: [&apos;es2015&apos;]
+  })
+  .code;
+// &apos;&quot;use strict&quot;;nnvar x = function x(n) {n  return n + 1;n};&apos;
+上面代码中， transform 方法的第一个参数是一个字符串，表示需要转换的ES5代码，第二个参数是转换的配置对象。
+
+六、babel-polyfill
+Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如 Object.assign ）都不会转码。
+
+举例来说，ES6在 Array 对象上新增了 Array.from 方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用 babel-polyfill ，为当前环境提供一个垫片。
+
+安装命令如下。
+
+$ npm install --save babel-polyfill
+$ npminstall --savebabel-polyfill
+然后，在脚本头部，加入如下一行代码。
+
+import &apos;babel-polyfill&apos;;
+// 或者
+require(&apos;babel-polyfill&apos;);
+import &apos;babel-polyfill&apos;;
+// 或者
+require(&apos;babel-polyfill&apos;);
+Babel默认不转码的API非常多，详细清单可以查看 babel-plugin-transform-runtime 模块的 definitions.js 文件。
+
+七、浏览器环境
+Babel也可以用于浏览器环境。但是，从Babel 6.0开始，不再直接提供浏览器版本，而是要用构建工具构建出来。如果你没有或不想使用构建工具，可以通过安装5.x版本的 babel-core 模块获取。
+
+$ npm install babel-core&lt;a href=&quot;http://www.jobbole.com/members/5&quot;&gt;@5&lt;/a&gt;
+$ npminstallbabel-core&lt;a href=&quot;http://www.jobbole.com/members/5&quot;&gt;@5&lt;/a&gt;
+运行上面的命令以后，就可以在当前目录的 node_modules/babel-core/ 子目录里面，找到 babel 的浏览器版本 browser.js （未精简）和 browser.min.js （已精简）。
+
+然后，将下面的代码插入网页。
+
+JavaScript
+
+&lt;script src=&quot;node_modules/babel-core/browser.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/babel&quot;&gt;
+// Your ES6 code
+&lt;/script&gt;
+&lt;scriptsrc=&quot;node_modules/babel-core/browser.js&quot;&gt;&lt;/script&gt;
+&lt;scripttype=&quot;text/babel&quot;&gt;
+// Your ES6 code
+&lt;/script&gt;
+&lt;/div&gt;
+上面代码中， browser.js 是Babel提供的转换器脚本，可以在浏览器运行。用户的ES6脚本放在 script 标签之中，但是要注明 type=&quot;text/babel&quot; 。
+
+另一种方法是使用 babel-standalone 模块提供的浏览器版本，将其插入网页。
+
+JavaScript
+
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/babel&quot;&gt;
+// Your ES6 code
+&lt;/script&gt;
+&lt;scriptsrc=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js&quot;&gt;&lt;/script&gt;
+&lt;scripttype=&quot;text/babel&quot;&gt;
+// Your ES6 code
+&lt;/script&gt;
+&lt;/div&gt;
+注意，网页中实时将ES6代码转为ES5，对性能会有影响。生产环境需要加载已经转码完成的脚本。
+
+下面是如何将代码打包成浏览器可以使用的脚本，以 Babel 配合 Browserify 为例。首先，安装 babelify 模块。
+
+$ npm install --save-dev babelify babel-preset-es2015
+$ npminstall --save-devbabelifybabel-preset-es2015
+然后，再用命令行转换ES6脚本。
+
+$  browserify script.js -o bundle.js 
+  -t [ babelify --presets [ es2015 react ] ]
+$  browserifyscript.js -o bundle.js 
+  -t [ babelify --presets [ es2015react ] ]
+上面代码将ES6脚本 script.js ，转为 bundle.js ，浏览器直接加载后者就可以了。
+
+在 package.json 设置下面的代码，就不用每次命令行都输入参数了。
+
+{
+  &quot;browserify&quot;: {
+    &quot;transform&quot;: [[&quot;babelify&quot;, { &quot;presets&quot;: [&quot;es2015&quot;] }]]
+  }
+}
+{
+  &quot;browserify&quot;: {
+    &quot;transform&quot;: [[&quot;babelify&quot;, { &quot;presets&quot;: [&quot;es2015&quot;] }]]
+  }
+}
+八、在线转换
+Babel提供一个 REPL在线编译器 ，可以在线将ES6代码转为ES5代码。转换后的代码，可以直接作为ES5代码插入网页运行。
+
+九、与其他工具的配合
+许多工具需要Babel进行前置转码，这里举两个例子：ESLint和Mocha。
+
+ESLint 用于静态检查代码的语法和风格，安装命令如下。
+
+$ npm install --save-dev eslint babel-eslint
+$ npminstall --save-deveslintbabel-eslint
+然后，在项目根目录下，新建一个配置文件 .eslint ，在其中加入 parser 字段。
+
+{
+  &quot;parser&quot;: &quot;babel-eslint&quot;,
+  &quot;rules&quot;: {
+    ...
+  }
+}
+{
+  &quot;parser&quot;: &quot;babel-eslint&quot;,
+  &quot;rules&quot;: {
+    ...
+  }
+}
+再在 package.json 之中，加入相应的 scripts 脚本。
+
+{
+    &quot;name&quot;: &quot;my-module&quot;,
+    &quot;scripts&quot;: {
+      &quot;lint&quot;: &quot;eslint my-files.js&quot;
+    },
+    &quot;devDependencies&quot;: {
+      &quot;babel-eslint&quot;: &quot;...&quot;,
+      &quot;eslint&quot;: &quot;...&quot;
+    }
+  }
+  {
+    &quot;name&quot;: &quot;my-module&quot;,
+    &quot;scripts&quot;: {
+      &quot;lint&quot;: &quot;eslint my-files.js&quot;
+    },
+    &quot;devDependencies&quot;: {
+      &quot;babel-eslint&quot;: &quot;...&quot;,
+      &quot;eslint&quot;: &quot;...&quot;
+    }
+  }
+Mocha 则是一个测试框架，如果需要执行使用ES6语法的测试脚本，可以修改 package.json 的 scripts.test 。
+
+&quot;scripts&quot;: {
+  &quot;test&quot;: &quot;mocha --ui qunit --compilers js:babel-core/register&quot;
+}
+&quot;scripts&quot;: {
+  &quot;test&quot;: &quot;mocha --ui qunit --compilers js:babel-core/register&quot;
+}
+上面命令中， --compilers 参数指定脚本的转码器，规定后缀名为 js 的文件，都需要使用 babel-core/register 先转码。
+
+&lt;/div&gt;
+深度开源</code></pre>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="tag-icon is-size-6 has-text-grey has-mr-7"></span>
+                    <a class="has-link-grey -link" href="/tags/tool/" rel="tag">tool</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <link rel="stylesheet" href="/aPlayer/APlayer.min.css">
+        <div id="aplayer"></div>
+        <script type="text/javascript" src="/aPlayer/APlayer.min.js"></script>
+        <script type="text/javascript" src="/aPlayer/music.js"></script>
+
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/aplay.png" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/weixin.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">weex打包安卓</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/28/krpano-tour-xml/">
+                <span class="level-item">krpano tour.xml</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'I2UyvCiHHlhs9sUKgM0rHG33-gzGzoHsz',
+        app_key: 'dTA3IBoeBdo5by5kTa9hOocd',
+        placeholder: '给我的文章加点评论吧~'
+    });
+</script>
+
+    </div>
+</div>
+
+
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <!--<img class="" src="/images/kb-mini.png" alt="小黑搞点事">-->
+                        <!--不管了 都用圆角-->
+                        <img class="is-rounded" src="/images/kb-mini.png" alt="小黑搞点事">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        小黑搞点事
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        前端渣渣
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>天府-成都</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            12
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            5
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            11
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/blackKr" target="_blank" rel="noopener">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/blackKr">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Dribbble" href="https://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/blackKr" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">black</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/VR/">
+            <span class="level-start">
+                <span class="level-item">VR</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/web%E5%89%8D%E7%AB%AF/">
+            <span class="level-start">
+                <span class="level-item">web前端</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/weex/">
+            <span class="level-start">
+                <span class="level-item">weex</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E5%91%BD%E4%BB%A4/">
+            <span class="level-start">
+                <span class="level-item">命令</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">
+            <span class="level-start">
+                <span class="level-item">转换工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/cygwin/" style="font-size: 10px;">cygwin</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/krpano/" style="font-size: 20px;">krpano</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tool/" style="font-size: 10px;">tool</a> <a href="/tags/uniapp/" style="font-size: 10px;">uniapp</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:11:42.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">weex打包安卓</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weex/">weex</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:02:32.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">转换工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">转换工具</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:56:14.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-tour-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano tour.xml</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:42:17.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-vtourskin-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano vtourskin.xml</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:26:53.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano 使用教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cygwin/">
+                        <span class="tag">cygwin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript/">
+                        <span class="tag">javascript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/krpano/">
+                        <span class="tag">krpano</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/shell/">
+                        <span class="tag">shell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/svn/">
+                        <span class="tag">svn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tool/">
+                        <span class="tag">tool</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/uniapp/">
+                        <span class="tag">uniapp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vim/">
+                        <span class="tag">vim</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue/">
+                        <span class="tag">vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weex/">
+                        <span class="tag">weex</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:11:42.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/weex%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">weex打包安卓</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weex/">weex</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T09:02:32.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">转换工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">转换工具</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:56:14.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-tour-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano tour.xml</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:42:17.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-vtourskin-xml/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano vtourskin.xml</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-28T08:26:53.000Z">2020-01-28</time></div>
+                    <a href="/2020/01/28/krpano-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">krpano 使用教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VR/">VR</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cygwin/">
+                        <span class="tag">cygwin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript/">
+                        <span class="tag">javascript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/krpano/">
+                        <span class="tag">krpano</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/shell/">
+                        <span class="tag">shell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/svn/">
+                        <span class="tag">svn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tool/">
+                        <span class="tag">tool</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/uniapp/">
+                        <span class="tag">uniapp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vim/">
+                        <span class="tag">vim</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue/">
+                        <span class="tag">vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weex/">
+                        <span class="tag">weex</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="转换工具" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Black&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/blackKr">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
